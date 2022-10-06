@@ -1,0 +1,11 @@
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.csproj.AssemblyReference.cache
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.csproj.SuggestedBindingRedirects.cache
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.Properties.Resources.resources
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.csproj.GenerateResource.cache
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.csproj.CoreCompileInputs.cache
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\bin\Debug\Examination_System_ITI.exe.config
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\bin\Debug\Examination_System_ITI.exe
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\bin\Debug\Examination_System_ITI.pdb
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.exe
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.pdb
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.Views.MainFrm.resources
