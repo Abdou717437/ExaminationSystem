@@ -88,7 +88,7 @@
             this.logoLbl.AutoSize = true;
             this.logoLbl.Font = new System.Drawing.Font("Lucida Calligraphy", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(39)))), ((int)(((byte)(45)))));
-            this.logoLbl.Location = new System.Drawing.Point(74, 20);
+            this.logoLbl.Location = new System.Drawing.Point(62, 20);
             this.logoLbl.Name = "logoLbl";
             this.logoLbl.Size = new System.Drawing.Size(99, 57);
             this.logoLbl.TabIndex = 0;
@@ -100,7 +100,7 @@
             this.appTitle.AutoSize = true;
             this.appTitle.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.appTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(156)))), ((int)(((byte)(166)))));
-            this.appTitle.Location = new System.Drawing.Point(24, 75);
+            this.appTitle.Location = new System.Drawing.Point(21, 75);
             this.appTitle.Name = "appTitle";
             this.appTitle.Size = new System.Drawing.Size(197, 28);
             this.appTitle.TabIndex = 1;
