@@ -11,7 +11,10 @@ namespace Models
 {
     class Context :DbContext
     {
+        public Context() : base("name=con")
+        {
 
+        }
         public virtual DbSet<Student_Answer> Student_Answers { get; set; }
         public virtual DbSet<Question_Bank> Questions { get; set; }
         public virtual DbSet<Question_Option> Question_Options { get; set; }
@@ -31,14 +34,16 @@ namespace Models
         public virtual DbSet<Multi_Answer> Multi_Answers { get; set; }
 
         // Hosam
-
         public virtual DbSet<Student_Contact> Student_Contacts { get; set; }
         public virtual DbSet<Instructor_Contact> Instructor_Contacts { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Intake> Intakes { get; set; }
         public virtual DbSet<Branch> Branches { get; set; }
-        public virtual DbSet<Manager> Managers { get; set; }
 
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().ToTable("User");
+            modelBuilder.Entity<Student>().ToTable("Student");
+        }
     }
 }

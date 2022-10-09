@@ -17,6 +17,7 @@ namespace Examination_System_ITI.Views
         {
             InitializeComponent();
             ActivateButton(dashboardBtn);
+
         }
 
         private void button1_Click(object sender, EventArgs e)

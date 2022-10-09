@@ -11,6 +11,7 @@ namespace Models
     [Table ("Student_Contact")]
     public class Student_Contact
     {
+        public int Id { get; set; }
         public string Phone { get; set; }
 
         public string Website { get; set; }

@@ -23,8 +23,7 @@ namespace Models
         public string Description { get; set; }
         public bool IsActive { get; set; }
 
-        public virtual Manager Manager{ get; set; }
-
+        public virtual Instructor Instructor { get; set; }
         public virtual ICollection<Student> Students { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }

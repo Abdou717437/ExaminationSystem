@@ -25,5 +25,7 @@ namespace Models
         public virtual ICollection<Exam> Exams { get; set; }
 
         public virtual Instructor Instructor { get; set; }
+
+
     }
 }

@@ -14,15 +14,18 @@ namespace Models
         public Branch()
         {
             Tracks = new HashSet<Track>();
+            Instructors = new HashSet<Instructor>();
         }
 
         public int Id { get; set; }
 
-        [Required, MaxLength(10)]
+        [Required, MinLength(5), MaxLength(100)]
         public string Name { get; set; }
-        public string Description { get; set; }   
+        public string Description { get; set; }
 
-        public virtual Manager Manager { get; set; } 
+        public Instructor Instructor { get; set; }
+
+        public virtual ICollection<Instructor> Instructors { get; set; }
 
         public virtual ICollection<Track> Tracks { get; set; }
     }

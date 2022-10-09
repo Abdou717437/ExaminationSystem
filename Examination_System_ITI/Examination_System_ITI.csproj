@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +69,11 @@
     <Compile Include="Custom Tools\AnmhToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Migrations\202210092013320_SomeEditing.cs" />
+    <Compile Include="Migrations\202210092013320_SomeEditing.designer.cs">
+      <DependentUpon>202210092013320_SomeEditing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Student_Answer.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Context.cs" />
@@ -77,7 +83,6 @@
     <Compile Include="Models\Instructor_Contact.cs" />
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\Intake.cs" />
-    <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\Multi_Answer.cs" />
     <Compile Include="Models\Exam_Question.cs" />
     <Compile Include="Models\Question_Bank.cs" />
@@ -101,6 +106,9 @@
     <Compile Include="Views\MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Migrations\202210092013320_SomeEditing.resx">
+      <DependentUpon>202210092013320_SomeEditing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

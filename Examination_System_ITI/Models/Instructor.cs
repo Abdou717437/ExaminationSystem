@@ -12,14 +12,10 @@ namespace Models
     [Table ("Instructor")]
     public class Instructor : User
     {
-        public Instructor()
-        {
-            Exams = new HashSet<Exam>();
-            Instructor_Contacts = new HashSet<Instructor_Contact>();
-            Courses = new HashSet<Course>();
-        }
+
         [Required, MaxLength(14)]
-        public int N_ID { get; set; }
+        public string National_Id { get; set; }
+
         [Required, MaxLength(10)]
         public string F_Name { get; set; }
         [Required, MaxLength(10)]
@@ -27,15 +23,16 @@ namespace Models
 
         [Required, MaxLength(10)]
         public string L_Name { get; set; }
+
+        public string Street { get; set; }
+
         public virtual Instructor Supervisor { get; set; }
-        //[Key]
+
         public virtual Branch Branch { get; set; }
 
-        [Required, MaxLength(50)]
-        public string Street { get; set; }
-        
-        [Required, MaxLength(50)]
-        public string Zone { get; set; }
+        public virtual ICollection<Branch> Branches { get; set; }
+
+        public virtual ICollection<Track> Tracks { get; set; }
 
         public virtual ICollection<Exam> Exams { get; set; }
 

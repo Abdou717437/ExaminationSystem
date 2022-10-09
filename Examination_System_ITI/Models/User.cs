@@ -15,12 +15,10 @@ namespace Models
         public string User_Name { get; set; }
 
         public string Password { get; set; }
-        [Required, MaxLength(10)]
+
         public bool Status { get; set; }
 
-        public bool User_Type { get; set; }
-
-        public Image Profile_Image { get; set; } 
+        public string Profile_Image_Src { get; set; } 
 
     }
 }

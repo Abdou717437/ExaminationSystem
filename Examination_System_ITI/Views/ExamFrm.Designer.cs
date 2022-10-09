@@ -38,6 +38,11 @@
             this.rBtnOption1 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.anmhButton4 = new Responsive_Design.Anmh_Controls.AnmhButton();
+            this.anmhButton3 = new Responsive_Design.Anmh_Controls.AnmhButton();
+            this.anmhButton2 = new Responsive_Design.Anmh_Controls.AnmhButton();
+            this.anmhButton1 = new Responsive_Design.Anmh_Controls.AnmhButton();
+            this.btnPrevious = new Responsive_Design.Anmh_Controls.AnmhButton();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LblTimer = new System.Windows.Forms.Label();
@@ -50,11 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.examTitleLbl = new System.Windows.Forms.Label();
-            this.anmhButton4 = new Responsive_Design.Anmh_Controls.AnmhButton();
-            this.anmhButton3 = new Responsive_Design.Anmh_Controls.AnmhButton();
-            this.anmhButton2 = new Responsive_Design.Anmh_Controls.AnmhButton();
-            this.anmhButton1 = new Responsive_Design.Anmh_Controls.AnmhButton();
-            this.btnPrevious = new Responsive_Design.Anmh_Controls.AnmhButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlQuestion.SuspendLayout();
@@ -113,7 +113,7 @@
             this.gBoxOptions.Controls.Add(this.radioButton2);
             this.gBoxOptions.Controls.Add(this.radioButton1);
             this.gBoxOptions.Controls.Add(this.rBtnOption1);
-            this.gBoxOptions.Location = new System.Drawing.Point(23, 140);
+            this.gBoxOptions.Location = new System.Drawing.Point(19, 142);
             this.gBoxOptions.Name = "gBoxOptions";
             this.gBoxOptions.Size = new System.Drawing.Size(1281, 325);
             this.gBoxOptions.TabIndex = 1;
@@ -201,6 +201,106 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1346, 97);
             this.panel3.TabIndex = 1;
+            // 
+            // anmhButton4
+            // 
+            this.anmhButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.anmhButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.anmhButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.anmhButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.anmhButton4.BorderRadius = 20;
+            this.anmhButton4.BorderSize = 0;
+            this.anmhButton4.FlatAppearance.BorderSize = 0;
+            this.anmhButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.anmhButton4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anmhButton4.ForeColor = System.Drawing.Color.White;
+            this.anmhButton4.Location = new System.Drawing.Point(593, 19);
+            this.anmhButton4.Name = "anmhButton4";
+            this.anmhButton4.Size = new System.Drawing.Size(157, 63);
+            this.anmhButton4.TabIndex = 0;
+            this.anmhButton4.Text = "Finish";
+            this.anmhButton4.TextColor = System.Drawing.Color.White;
+            this.anmhButton4.UseVisualStyleBackColor = false;
+            // 
+            // anmhButton3
+            // 
+            this.anmhButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.anmhButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.anmhButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.anmhButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.anmhButton3.BorderRadius = 20;
+            this.anmhButton3.BorderSize = 0;
+            this.anmhButton3.FlatAppearance.BorderSize = 0;
+            this.anmhButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.anmhButton3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anmhButton3.ForeColor = System.Drawing.Color.White;
+            this.anmhButton3.Location = new System.Drawing.Point(911, 19);
+            this.anmhButton3.Name = "anmhButton3";
+            this.anmhButton3.Size = new System.Drawing.Size(157, 63);
+            this.anmhButton3.TabIndex = 0;
+            this.anmhButton3.Text = "CLear";
+            this.anmhButton3.TextColor = System.Drawing.Color.White;
+            this.anmhButton3.UseVisualStyleBackColor = false;
+            // 
+            // anmhButton2
+            // 
+            this.anmhButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.anmhButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.anmhButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.anmhButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.anmhButton2.BorderRadius = 20;
+            this.anmhButton2.BorderSize = 0;
+            this.anmhButton2.FlatAppearance.BorderSize = 0;
+            this.anmhButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.anmhButton2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anmhButton2.ForeColor = System.Drawing.Color.White;
+            this.anmhButton2.Location = new System.Drawing.Point(1084, 19);
+            this.anmhButton2.Name = "anmhButton2";
+            this.anmhButton2.Size = new System.Drawing.Size(157, 63);
+            this.anmhButton2.TabIndex = 0;
+            this.anmhButton2.Text = "Next";
+            this.anmhButton2.TextColor = System.Drawing.Color.White;
+            this.anmhButton2.UseVisualStyleBackColor = false;
+            // 
+            // anmhButton1
+            // 
+            this.anmhButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.anmhButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.anmhButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.anmhButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.anmhButton1.BorderRadius = 20;
+            this.anmhButton1.BorderSize = 0;
+            this.anmhButton1.FlatAppearance.BorderSize = 0;
+            this.anmhButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.anmhButton1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anmhButton1.ForeColor = System.Drawing.Color.White;
+            this.anmhButton1.Location = new System.Drawing.Point(279, 19);
+            this.anmhButton1.Name = "anmhButton1";
+            this.anmhButton1.Size = new System.Drawing.Size(157, 63);
+            this.anmhButton1.TabIndex = 0;
+            this.anmhButton1.Text = "Mark";
+            this.anmhButton1.TextColor = System.Drawing.Color.White;
+            this.anmhButton1.UseVisualStyleBackColor = false;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.btnPrevious.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
+            this.btnPrevious.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPrevious.BorderRadius = 20;
+            this.btnPrevious.BorderSize = 0;
+            this.btnPrevious.FlatAppearance.BorderSize = 0;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.White;
+            this.btnPrevious.Location = new System.Drawing.Point(105, 19);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(157, 63);
+            this.btnPrevious.TabIndex = 0;
+            this.btnPrevious.Text = "Previous";
+            this.btnPrevious.TextColor = System.Drawing.Color.White;
+            this.btnPrevious.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -343,106 +443,6 @@
             this.examTitleLbl.Size = new System.Drawing.Size(141, 28);
             this.examTitleLbl.TabIndex = 0;
             this.examTitleLbl.Text = "Questions";
-            // 
-            // anmhButton4
-            // 
-            this.anmhButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.anmhButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.anmhButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.anmhButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.anmhButton4.BorderRadius = 20;
-            this.anmhButton4.BorderSize = 0;
-            this.anmhButton4.FlatAppearance.BorderSize = 0;
-            this.anmhButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.anmhButton4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anmhButton4.ForeColor = System.Drawing.Color.White;
-            this.anmhButton4.Location = new System.Drawing.Point(593, 19);
-            this.anmhButton4.Name = "anmhButton4";
-            this.anmhButton4.Size = new System.Drawing.Size(157, 63);
-            this.anmhButton4.TabIndex = 0;
-            this.anmhButton4.Text = "Finish";
-            this.anmhButton4.TextColor = System.Drawing.Color.White;
-            this.anmhButton4.UseVisualStyleBackColor = false;
-            // 
-            // anmhButton3
-            // 
-            this.anmhButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.anmhButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.anmhButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.anmhButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.anmhButton3.BorderRadius = 20;
-            this.anmhButton3.BorderSize = 0;
-            this.anmhButton3.FlatAppearance.BorderSize = 0;
-            this.anmhButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.anmhButton3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anmhButton3.ForeColor = System.Drawing.Color.White;
-            this.anmhButton3.Location = new System.Drawing.Point(911, 19);
-            this.anmhButton3.Name = "anmhButton3";
-            this.anmhButton3.Size = new System.Drawing.Size(157, 63);
-            this.anmhButton3.TabIndex = 0;
-            this.anmhButton3.Text = "CLear";
-            this.anmhButton3.TextColor = System.Drawing.Color.White;
-            this.anmhButton3.UseVisualStyleBackColor = false;
-            // 
-            // anmhButton2
-            // 
-            this.anmhButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.anmhButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.anmhButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.anmhButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.anmhButton2.BorderRadius = 20;
-            this.anmhButton2.BorderSize = 0;
-            this.anmhButton2.FlatAppearance.BorderSize = 0;
-            this.anmhButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.anmhButton2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anmhButton2.ForeColor = System.Drawing.Color.White;
-            this.anmhButton2.Location = new System.Drawing.Point(1084, 19);
-            this.anmhButton2.Name = "anmhButton2";
-            this.anmhButton2.Size = new System.Drawing.Size(157, 63);
-            this.anmhButton2.TabIndex = 0;
-            this.anmhButton2.Text = "Next";
-            this.anmhButton2.TextColor = System.Drawing.Color.White;
-            this.anmhButton2.UseVisualStyleBackColor = false;
-            // 
-            // anmhButton1
-            // 
-            this.anmhButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.anmhButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.anmhButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.anmhButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.anmhButton1.BorderRadius = 20;
-            this.anmhButton1.BorderSize = 0;
-            this.anmhButton1.FlatAppearance.BorderSize = 0;
-            this.anmhButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.anmhButton1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anmhButton1.ForeColor = System.Drawing.Color.White;
-            this.anmhButton1.Location = new System.Drawing.Point(279, 19);
-            this.anmhButton1.Name = "anmhButton1";
-            this.anmhButton1.Size = new System.Drawing.Size(157, 63);
-            this.anmhButton1.TabIndex = 0;
-            this.anmhButton1.Text = "Mark";
-            this.anmhButton1.TextColor = System.Drawing.Color.White;
-            this.anmhButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.btnPrevious.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(103)))), ((int)(((byte)(181)))));
-            this.btnPrevious.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnPrevious.BorderRadius = 20;
-            this.btnPrevious.BorderSize = 0;
-            this.btnPrevious.FlatAppearance.BorderSize = 0;
-            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevious.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.ForeColor = System.Drawing.Color.White;
-            this.btnPrevious.Location = new System.Drawing.Point(105, 19);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(157, 63);
-            this.btnPrevious.TabIndex = 0;
-            this.btnPrevious.Text = "Previous";
-            this.btnPrevious.TextColor = System.Drawing.Color.White;
-            this.btnPrevious.UseVisualStyleBackColor = false;
             // 
             // ExamFrm
             // 

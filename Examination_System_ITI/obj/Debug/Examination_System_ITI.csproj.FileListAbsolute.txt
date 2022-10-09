@@ -15,3 +15,4 @@ C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj
 C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.csproj.CopyComplete
 C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.exe
 C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.pdb
+C:\Users\NOTEBOOK\source\repos\Examination_System_ITI\Examination_System_ITI\obj\Debug\Examination_System_ITI.Migrations.SomeEditing.resources
