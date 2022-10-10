@@ -44,6 +44,11 @@ namespace Models
         {
             modelBuilder.Entity<User>().ToTable("User");
             modelBuilder.Entity<Student>().ToTable("Student");
+
+            modelBuilder.Entity<Instructor>()
+                .HasRequired(I => I.Branch)
+                .WithMany(B => B.Instructors)
+                .HasForeignKey(I => I.BranchId);
         }
     }
 }

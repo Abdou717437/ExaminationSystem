@@ -11,18 +11,13 @@ namespace Models
     [Table ("Branch")]
     public class Branch
     {
-        public Branch()
-        {
-            Tracks = new HashSet<Track>();
-            Instructors = new HashSet<Instructor>();
-        }
-
         public int Id { get; set; }
 
         [Required, MinLength(5), MaxLength(100)]
         public string Name { get; set; }
         public string Description { get; set; }
 
+        public int InstructorId { get; set; }
         public Instructor Instructor { get; set; }
 
         public virtual ICollection<Instructor> Instructors { get; set; }

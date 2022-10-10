@@ -24,15 +24,10 @@ namespace Models
         [Required, MaxLength(10)]
         public string L_Name { get; set; }
 
-        public string Street { get; set; }
-
-        public virtual Instructor Supervisor { get; set; }
-
+        public int BranchId { get; set; }
         public virtual Branch Branch { get; set; }
 
-        public virtual ICollection<Branch> Branches { get; set; }
-
-        public virtual ICollection<Track> Tracks { get; set; }
+        public virtual Instructor Supervisor { get; set; }
 
         public virtual ICollection<Exam> Exams { get; set; }
 

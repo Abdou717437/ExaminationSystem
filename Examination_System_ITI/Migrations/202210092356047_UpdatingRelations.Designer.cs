@@ -7,13 +7,13 @@ namespace Examination_System_ITI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class SomeEditing : IMigrationMetadata
+    public sealed partial class UpdatingRelations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SomeEditing));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatingRelations));
         
         string IMigrationMetadata.Id
         {
-            get { return "202210092013320_SomeEditing"; }
+            get { return "202210092356047_UpdatingRelations"; }
         }
         
         string IMigrationMetadata.Source

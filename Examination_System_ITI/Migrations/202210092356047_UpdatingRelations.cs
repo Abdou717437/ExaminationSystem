@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class SomeEditing : DbMigration
+    public partial class UpdatingRelations : DbMigration
     {
         public override void Up()
         {
@@ -14,14 +14,11 @@
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 100),
                         Description = c.String(),
-                        Instructor_Id = c.Int(),
-                        Instructor_Id1 = c.Int(),
+                        InstructorId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Instructor", t => t.Instructor_Id)
-                .ForeignKey("dbo.Instructor", t => t.Instructor_Id1)
-                .Index(t => t.Instructor_Id)
-                .Index(t => t.Instructor_Id1);
+                .ForeignKey("dbo.Instructor", t => t.InstructorId)
+                .Index(t => t.InstructorId);
             
             CreateTable(
                 "dbo.User",
@@ -190,11 +187,11 @@
                         Name = c.String(),
                         Description = c.String(),
                         IsActive = c.Boolean(nullable: false),
-                        Instructor_Id = c.Int(),
+                        InstructorId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Instructor", t => t.Instructor_Id)
-                .Index(t => t.Instructor_Id);
+                .ForeignKey("dbo.Instructor", t => t.InstructorId)
+                .Index(t => t.InstructorId);
             
             CreateTable(
                 "dbo.Intake",
@@ -280,24 +277,20 @@
                 c => new
                     {
                         Id = c.Int(nullable: false),
-                        Branch_Id = c.Int(),
                         Supervisor_Id = c.Int(),
-                        Branch_Id1 = c.Int(),
                         National_Id = c.String(nullable: false, maxLength: 14),
                         F_Name = c.String(nullable: false, maxLength: 10),
                         M_Name = c.String(nullable: false, maxLength: 10),
                         L_Name = c.String(nullable: false, maxLength: 10),
-                        Street = c.String(),
+                        BranchId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.User", t => t.Id)
-                .ForeignKey("dbo.Branch", t => t.Branch_Id)
                 .ForeignKey("dbo.Instructor", t => t.Supervisor_Id)
-                .ForeignKey("dbo.Branch", t => t.Branch_Id1)
+                .ForeignKey("dbo.Branch", t => t.BranchId, cascadeDelete: true)
                 .Index(t => t.Id)
-                .Index(t => t.Branch_Id)
                 .Index(t => t.Supervisor_Id)
-                .Index(t => t.Branch_Id1);
+                .Index(t => t.BranchId);
             
             CreateTable(
                 "dbo.Student",
@@ -322,18 +315,17 @@
         {
             DropForeignKey("dbo.Student", "Track_Id", "dbo.Track");
             DropForeignKey("dbo.Student", "Id", "dbo.User");
-            DropForeignKey("dbo.Instructor", "Branch_Id1", "dbo.Branch");
+            DropForeignKey("dbo.Instructor", "BranchId", "dbo.Branch");
             DropForeignKey("dbo.Instructor", "Supervisor_Id", "dbo.Instructor");
-            DropForeignKey("dbo.Instructor", "Branch_Id", "dbo.Branch");
             DropForeignKey("dbo.Instructor", "Id", "dbo.User");
-            DropForeignKey("dbo.Branch", "Instructor_Id1", "dbo.Instructor");
+            DropForeignKey("dbo.Branch", "InstructorId", "dbo.Instructor");
             DropForeignKey("dbo.Instructor_Contact", "Instructor_Id", "dbo.Instructor");
             DropForeignKey("dbo.Course", "Instructor_Id", "dbo.Instructor");
             DropForeignKey("dbo.Exams", "Instructor_Id", "dbo.Instructor");
             DropForeignKey("dbo.IntakeTracks", "Track_Id", "dbo.Track");
             DropForeignKey("dbo.IntakeTracks", "Intake_Id", "dbo.Intake");
             DropForeignKey("dbo.Intake", "Branch_Id", "dbo.Branch");
-            DropForeignKey("dbo.Track", "Instructor_Id", "dbo.Instructor");
+            DropForeignKey("dbo.Track", "InstructorId", "dbo.Instructor");
             DropForeignKey("dbo.TrackCourses", "Course_Id", "dbo.Course");
             DropForeignKey("dbo.TrackCourses", "Track_Id", "dbo.Track");
             DropForeignKey("dbo.TrackBranches", "Branch_Id", "dbo.Branch");
@@ -353,12 +345,10 @@
             DropForeignKey("dbo.Correct_Answer", "Question_Id", "dbo.Question_Bank");
             DropForeignKey("dbo.Exam_Question", "Exam_Id", "dbo.Exams");
             DropForeignKey("dbo.Exams", "Course_Id", "dbo.Course");
-            DropForeignKey("dbo.Branch", "Instructor_Id", "dbo.Instructor");
             DropIndex("dbo.Student", new[] { "Track_Id" });
             DropIndex("dbo.Student", new[] { "Id" });
-            DropIndex("dbo.Instructor", new[] { "Branch_Id1" });
+            DropIndex("dbo.Instructor", new[] { "BranchId" });
             DropIndex("dbo.Instructor", new[] { "Supervisor_Id" });
-            DropIndex("dbo.Instructor", new[] { "Branch_Id" });
             DropIndex("dbo.Instructor", new[] { "Id" });
             DropIndex("dbo.IntakeTracks", new[] { "Track_Id" });
             DropIndex("dbo.IntakeTracks", new[] { "Intake_Id" });
@@ -370,7 +360,7 @@
             DropIndex("dbo.StudentExams", new[] { "Student_Id" });
             DropIndex("dbo.Instructor_Contact", new[] { "Instructor_Id" });
             DropIndex("dbo.Intake", new[] { "Branch_Id" });
-            DropIndex("dbo.Track", new[] { "Instructor_Id" });
+            DropIndex("dbo.Track", new[] { "InstructorId" });
             DropIndex("dbo.Student_Contact", new[] { "Student_Id" });
             DropIndex("dbo.Multi_Answer", new[] { "Student_Answer_Id" });
             DropIndex("dbo.Student_Answer", new[] { "Student_Id" });
@@ -386,8 +376,7 @@
             DropIndex("dbo.Exams", new[] { "Instructor_Id" });
             DropIndex("dbo.Exams", new[] { "Course_Id" });
             DropIndex("dbo.Course", new[] { "Instructor_Id" });
-            DropIndex("dbo.Branch", new[] { "Instructor_Id1" });
-            DropIndex("dbo.Branch", new[] { "Instructor_Id" });
+            DropIndex("dbo.Branch", new[] { "InstructorId" });
             DropTable("dbo.Student");
             DropTable("dbo.Instructor");
             DropTable("dbo.IntakeTracks");

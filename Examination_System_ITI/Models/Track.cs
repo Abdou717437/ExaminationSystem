@@ -23,7 +23,9 @@ namespace Models
         public string Description { get; set; }
         public bool IsActive { get; set; }
 
+        public int InstructorId { get; set; }
         public virtual Instructor Instructor { get; set; }
+
         public virtual ICollection<Student> Students { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }

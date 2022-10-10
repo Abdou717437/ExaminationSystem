@@ -69,9 +69,9 @@
     <Compile Include="Custom Tools\AnmhToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Migrations\202210092013320_SomeEditing.cs" />
-    <Compile Include="Migrations\202210092013320_SomeEditing.designer.cs">
-      <DependentUpon>202210092013320_SomeEditing.cs</DependentUpon>
+    <Compile Include="Migrations\202210092356047_UpdatingRelations.cs" />
+    <Compile Include="Migrations\202210092356047_UpdatingRelations.designer.cs">
+      <DependentUpon>202210092356047_UpdatingRelations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Student_Answer.cs" />
@@ -106,8 +106,8 @@
     <Compile Include="Views\MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202210092013320_SomeEditing.resx">
-      <DependentUpon>202210092013320_SomeEditing.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210092356047_UpdatingRelations.resx">
+      <DependentUpon>202210092356047_UpdatingRelations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
