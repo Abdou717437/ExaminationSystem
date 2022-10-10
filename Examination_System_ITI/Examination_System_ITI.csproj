@@ -69,15 +69,22 @@
     <Compile Include="Custom Tools\AnmhToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Migrations\202210092356047_UpdatingRelations.cs" />
-    <Compile Include="Migrations\202210092356047_UpdatingRelations.designer.cs">
-      <DependentUpon>202210092356047_UpdatingRelations.cs</DependentUpon>
+    <Compile Include="Migrations\202210102140050_EditingRelationships.cs" />
+    <Compile Include="Migrations\202210102140050_EditingRelationships.designer.cs">
+      <DependentUpon>202210102140050_EditingRelationships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202210102148295_EditingRelationships2.cs" />
+    <Compile Include="Migrations\202210102148295_EditingRelationships2.designer.cs">
+      <DependentUpon>202210102148295_EditingRelationships2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202210102246571_EditingRelationships3.cs" />
+    <Compile Include="Migrations\202210102246571_EditingRelationships3.designer.cs">
+      <DependentUpon>202210102246571_EditingRelationships3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Student_Answer.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\Correct_Answer.cs" />
     <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\Exam_Result.cs" />
     <Compile Include="Models\Instructor_Contact.cs" />
@@ -106,8 +113,14 @@
     <Compile Include="Views\MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202210092356047_UpdatingRelations.resx">
-      <DependentUpon>202210092356047_UpdatingRelations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210102140050_EditingRelationships.resx">
+      <DependentUpon>202210102140050_EditingRelationships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210102148295_EditingRelationships2.resx">
+      <DependentUpon>202210102148295_EditingRelationships2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210102246571_EditingRelationships3.resx">
+      <DependentUpon>202210102246571_EditingRelationships3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

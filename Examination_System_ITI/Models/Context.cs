@@ -19,8 +19,6 @@ namespace Models
         public virtual DbSet<Question_Bank> Questions { get; set; }
         public virtual DbSet<Question_Option> Question_Options { get; set; }
 
-        public virtual DbSet<Correct_Answer> Correct_Answers { get; set; }
-
         public virtual DbSet<Course> Courses { get; set; }
 
         public virtual DbSet<Exam_Question> Exam_Questions { get; set; }
@@ -49,6 +47,10 @@ namespace Models
                 .HasRequired(I => I.Branch)
                 .WithMany(B => B.Instructors)
                 .HasForeignKey(I => I.BranchId);
+            modelBuilder.Entity<Question_Option>().HasKey(o => o.QuestionId);
+            modelBuilder.Entity<Question_Bank>().HasOptional(o => o.Question_Option)
+                .WithRequired(q => q.Question_Bank);
+
         }
     }
 }

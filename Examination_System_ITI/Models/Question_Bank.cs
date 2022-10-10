@@ -12,22 +12,17 @@ namespace Models
     [Table ("Question_Bank")]
     public class Question_Bank
     {
-        public Question_Bank()
-        {
-            Correct_Answers = new HashSet<Correct_Answer>();
-            Options = new HashSet<Question_Option>();
-        }
         public int Id { get; set; }
         public int Type { get; set; }
         public string Body { get; set; }
 
+        public string Correct_Answer { get; set; }
+
         public virtual Course Course { get; set; }
 
-        public virtual Exam_Question Exam_Question { get; set; }
+        public virtual ICollection<Exam_Question> Exam_Questions { get; set; }
 
-        public virtual ICollection<Correct_Answer> Correct_Answers { get; set; }
-
-        public virtual ICollection<Question_Option> Options { get; set; }
+        public virtual Question_Option Question_Option { get; set; }
         
         
     }

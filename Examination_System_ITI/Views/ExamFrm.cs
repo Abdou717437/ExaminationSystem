@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Examination_System_ITI.Views
 {
     public partial class ExamFrm : Form

@@ -11,13 +11,12 @@ namespace Models
     [Table ("Question_Option")]
     public class Question_Option
     {
-
-        public int Id { get; set; }
+        public int QuestionId { get; set; }
         public string Op_1 { get; set; }
         public string Op_2 { get; set; }
         public string Op_3 { get; set; }
         public string Op_4 { get; set; }
-        public Question_Bank Question { get; set; }
+        public Question_Bank Question_Bank { get; set; }
 
     }
 }
