@@ -1,0 +1,11 @@
+D:\ITI.net\Day-68-Core\add-intake\add-intake\obj\Debug\add_intake.Form1.resources
+D:\ITI.net\Day-68-Core\add-intake\add-intake\obj\Debug\add_intake.Properties.Resources.resources
+D:\ITI.net\Day-68-Core\add-intake\add-intake\obj\Debug\add-intake.csproj.GenerateResource.cache
+D:\ITI.net\Day-68-Core\add-intake\add-intake\obj\Debug\add-intake.csproj.CoreCompileInputs.cache
+D:\ITI.net\Day-68-Core\add-intake\add-intake\obj\Debug\add-intake.csproj.AssemblyReference.cache
+D:\ITI.net\Day-68-Core\add-intake\add-intake\obj\Debug\add-intake.csproj.SuggestedBindingRedirects.cache
+D:\ITI.net\Day-68-Core\add-intake\add-intake\bin\Debug\add-intake.exe.config
+D:\ITI.net\Day-68-Core\add-intake\add-intake\bin\Debug\add-intake.exe
+D:\ITI.net\Day-68-Core\add-intake\add-intake\bin\Debug\add-intake.pdb
+D:\ITI.net\Day-68-Core\add-intake\add-intake\obj\Debug\add-intake.exe
+D:\ITI.net\Day-68-Core\add-intake\add-intake\obj\Debug\add-intake.pdb
