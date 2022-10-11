@@ -7,13 +7,13 @@ namespace Examination_System_ITI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class EditingRelationships2 : IMigrationMetadata
+    public sealed partial class AddingUserRoleTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EditingRelationships2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddingUserRoleTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202210102148295_EditingRelationships2"; }
+            get { return "202210110116535_AddingUserRoleTable"; }
         }
         
         string IMigrationMetadata.Source

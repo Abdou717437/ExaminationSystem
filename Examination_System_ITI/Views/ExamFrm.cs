@@ -15,6 +15,7 @@ namespace Examination_System_ITI.Views
         public ExamFrm()
         {
             InitializeComponent();
+            
         }
     }
 }

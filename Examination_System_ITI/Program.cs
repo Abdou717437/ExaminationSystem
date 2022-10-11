@@ -19,7 +19,7 @@ namespace Examination_System_ITI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ExamFrm());
+            Application.Run(new Login_Frm());
         }
     }
 }

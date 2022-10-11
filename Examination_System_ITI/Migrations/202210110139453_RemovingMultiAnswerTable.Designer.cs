@@ -7,13 +7,13 @@ namespace Examination_System_ITI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class EditingRelationships3 : IMigrationMetadata
+    public sealed partial class RemovingMultiAnswerTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EditingRelationships3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RemovingMultiAnswerTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202210102246571_EditingRelationships3"; }
+            get { return "202210110139453_RemovingMultiAnswerTable"; }
         }
         
         string IMigrationMetadata.Source

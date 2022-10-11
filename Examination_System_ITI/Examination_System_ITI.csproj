@@ -69,17 +69,13 @@
     <Compile Include="Custom Tools\AnmhToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Migrations\202210102140050_EditingRelationships.cs" />
-    <Compile Include="Migrations\202210102140050_EditingRelationships.designer.cs">
-      <DependentUpon>202210102140050_EditingRelationships.cs</DependentUpon>
+    <Compile Include="Migrations\202210110116535_AddingUserRoleTable.cs" />
+    <Compile Include="Migrations\202210110116535_AddingUserRoleTable.designer.cs">
+      <DependentUpon>202210110116535_AddingUserRoleTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202210102148295_EditingRelationships2.cs" />
-    <Compile Include="Migrations\202210102148295_EditingRelationships2.designer.cs">
-      <DependentUpon>202210102148295_EditingRelationships2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202210102246571_EditingRelationships3.cs" />
-    <Compile Include="Migrations\202210102246571_EditingRelationships3.designer.cs">
-      <DependentUpon>202210102246571_EditingRelationships3.cs</DependentUpon>
+    <Compile Include="Migrations\202210110139453_RemovingMultiAnswerTable.cs" />
+    <Compile Include="Migrations\202210110139453_RemovingMultiAnswerTable.designer.cs">
+      <DependentUpon>202210110139453_RemovingMultiAnswerTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Student_Answer.cs" />
@@ -90,7 +86,6 @@
     <Compile Include="Models\Instructor_Contact.cs" />
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\Intake.cs" />
-    <Compile Include="Models\Multi_Answer.cs" />
     <Compile Include="Models\Exam_Question.cs" />
     <Compile Include="Models\Question_Bank.cs" />
     <Compile Include="Models\Question_Option.cs" />
@@ -99,6 +94,7 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Track.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ExamFrm.cs">
@@ -107,20 +103,23 @@
     <Compile Include="Views\ExamFrm.Designer.cs">
       <DependentUpon>ExamFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Login_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login_Frm.Designer.cs">
+      <DependentUpon>Login_Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202210102140050_EditingRelationships.resx">
-      <DependentUpon>202210102140050_EditingRelationships.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210110116535_AddingUserRoleTable.resx">
+      <DependentUpon>202210110116535_AddingUserRoleTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202210102148295_EditingRelationships2.resx">
-      <DependentUpon>202210102148295_EditingRelationships2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202210102246571_EditingRelationships3.resx">
-      <DependentUpon>202210102246571_EditingRelationships3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210110139453_RemovingMultiAnswerTable.resx">
+      <DependentUpon>202210110139453_RemovingMultiAnswerTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -134,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="Views\ExamFrm.resx">
       <DependentUpon>ExamFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login_Frm.resx">
+      <DependentUpon>Login_Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
@@ -152,12 +154,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_home_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserNameIconLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passwordIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginButtonIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Context :DbContext
+    public class Context :DbContext
     {
         public Context() : base("name=con")
         {
@@ -29,8 +29,6 @@ namespace Models
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
         public virtual DbSet<Track> Tracks { get; set; }
-        public virtual DbSet<Multi_Answer> Multi_Answers { get; set; }
-
         // Hosam
         public virtual DbSet<Student_Contact> Student_Contacts { get; set; }
         public virtual DbSet<Instructor_Contact> Instructor_Contacts { get; set; }
@@ -38,19 +36,29 @@ namespace Models
         public virtual DbSet<Intake> Intakes { get; set; }
         public virtual DbSet<Branch> Branches { get; set; }
 
+        public virtual DbSet<Role> Users_Roles { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //Renaming Tables Names
             modelBuilder.Entity<User>().ToTable("User");
             modelBuilder.Entity<Student>().ToTable("Student");
+            modelBuilder.Entity<Student_Answer>().ToTable("Student_Answer");
 
+            //Relation Between Tabel  Instructor & Table Branch One To Many Relationship
             modelBuilder.Entity<Instructor>()
                 .HasRequired(I => I.Branch)
                 .WithMany(B => B.Instructors)
                 .HasForeignKey(I => I.BranchId);
+
+            //Relation Between Tabel  Question_Bank & Table Question_Option One To One Relationship
             modelBuilder.Entity<Question_Option>().HasKey(o => o.QuestionId);
             modelBuilder.Entity<Question_Bank>().HasOptional(o => o.Question_Option)
                 .WithRequired(q => q.Question_Bank);
 
+            //Relation Between Tabel  User & Table User_Role One To One Relationship
+            modelBuilder.Entity<Role>().HasKey(ur => ur.UserId);
+            modelBuilder.Entity<User>().HasOptional(u => u.Role).WithRequired(ur => ur.User);
         }
     }
 }

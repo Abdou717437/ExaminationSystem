@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,6 @@ namespace Examination_System_ITI.Views
         {
             InitializeComponent();
             ActivateButton(dashboardBtn);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Examination_System_ITI.Views
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
+        {   
             ActivateButton(sender);
         }
 
@@ -89,5 +89,32 @@ namespace Examination_System_ITI.Views
             }
         }
         #endregion
+
+        private void MainFrm_Load(object sender, EventArgs e)
+        {
+            lblUserName.Text = User.CurrentUser.User_Name;
+            lblUserTitle.Text = User.CurrentUser.Role.UserRole;
+            switch(User.CurrentUser.Role.UserRole)
+            {
+                case "Admin":
+
+                    break;
+                case "Branch Manager":
+
+                    break;
+                case "Track Manager":
+
+                    break;
+                case "Supervisor":
+
+                    break;
+                case "Student":
+                    btnHandleExams.Visible = false;
+                    btnHandleStds.Visible = false;
+                    btnInstructors.Visible = false;
+                    btnBranches.Text = "My Results";
+                    break;
+            }
+        }
     }
 }
