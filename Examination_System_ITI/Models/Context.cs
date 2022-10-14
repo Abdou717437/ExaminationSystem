@@ -30,8 +30,6 @@ namespace Models
         public virtual DbSet<Instructor> Instructors { get; set; }
         public virtual DbSet<Track> Tracks { get; set; }
         // Hosam
-        public virtual DbSet<Student_Contact> Student_Contacts { get; set; }
-        public virtual DbSet<Instructor_Contact> Instructor_Contacts { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Intake> Intakes { get; set; }
         public virtual DbSet<Branch> Branches { get; set; }
@@ -47,9 +45,19 @@ namespace Models
 
             //Relation Between Tabel  Instructor & Table Branch One To Many Relationship
             modelBuilder.Entity<Instructor>()
-                .HasRequired(I => I.Branch)
+                .HasOptional(I => I.Branch)
                 .WithMany(B => B.Instructors)
                 .HasForeignKey(I => I.BranchId);
+
+            modelBuilder.Entity<Instructor>()
+                .HasOptional(I => I.Supervisor)
+                .WithMany(S => S.Instructors)
+                .HasForeignKey(I => I.SupervisorId);
+
+            modelBuilder.Entity<Student>()
+                .HasRequired(S => S.Track)
+                .WithMany(T => T.Students)
+                .HasForeignKey(I => I.TrackId);
 
             //Relation Between Tabel  Question_Bank & Table Question_Option One To One Relationship
             modelBuilder.Entity<Question_Option>().HasKey(o => o.QuestionId);
@@ -59,6 +67,7 @@ namespace Models
             //Relation Between Tabel  User & Table User_Role One To One Relationship
             modelBuilder.Entity<Role>().HasKey(ur => ur.UserId);
             modelBuilder.Entity<User>().HasOptional(u => u.Role).WithRequired(ur => ur.User);
+
         }
     }
 }

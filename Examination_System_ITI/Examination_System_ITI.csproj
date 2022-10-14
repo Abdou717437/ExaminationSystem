@@ -69,13 +69,13 @@
     <Compile Include="Custom Tools\AnmhToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Migrations\202210110116535_AddingUserRoleTable.cs" />
-    <Compile Include="Migrations\202210110116535_AddingUserRoleTable.designer.cs">
-      <DependentUpon>202210110116535_AddingUserRoleTable.cs</DependentUpon>
+    <Compile Include="Migrations\202210140929106_newmigration2.cs" />
+    <Compile Include="Migrations\202210140929106_newmigration2.designer.cs">
+      <DependentUpon>202210140929106_newmigration2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202210110139453_RemovingMultiAnswerTable.cs" />
-    <Compile Include="Migrations\202210110139453_RemovingMultiAnswerTable.designer.cs">
-      <DependentUpon>202210110139453_RemovingMultiAnswerTable.cs</DependentUpon>
+    <Compile Include="Migrations\202210140939093_newmigration3.cs" />
+    <Compile Include="Migrations\202210140939093_newmigration3.designer.cs">
+      <DependentUpon>202210140939093_newmigration3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Student_Answer.cs" />
@@ -83,13 +83,11 @@
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\Exam_Result.cs" />
-    <Compile Include="Models\Instructor_Contact.cs" />
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\Intake.cs" />
     <Compile Include="Models\Exam_Question.cs" />
     <Compile Include="Models\Question_Bank.cs" />
     <Compile Include="Models\Question_Option.cs" />
-    <Compile Include="Models\Student_Contact.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Track.cs" />
@@ -97,11 +95,65 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CoursesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CoursesFrm.Designer.cs">
+      <DependentUpon>CoursesFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExamFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\ExamFrm.Designer.cs">
       <DependentUpon>ExamFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExamListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExamListFrm.Designer.cs">
+      <DependentUpon>ExamListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmStudents.Designer.cs">
+      <DependentUpon>FrmStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frm_Branches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Branches.Designer.cs">
+      <DependentUpon>Frm_Branches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frm_Instructors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Instructors.Designer.cs">
+      <DependentUpon>Frm_Instructors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frm_Intakes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Intakes.Designer.cs">
+      <DependentUpon>Frm_Intakes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frm_Results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Results.Designer.cs">
+      <DependentUpon>Frm_Results.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frm_Tracks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frm_Tracks.Designer.cs">
+      <DependentUpon>Frm_Tracks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstructorDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InstructorDashboard.Designer.cs">
+      <DependentUpon>InstructorDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login_Frm.cs">
       <SubType>Form</SubType>
@@ -115,11 +167,17 @@
     <Compile Include="Views\MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202210110116535_AddingUserRoleTable.resx">
-      <DependentUpon>202210110116535_AddingUserRoleTable.cs</DependentUpon>
+    <Compile Include="Views\StudentDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StudentDashboard.Designer.cs">
+      <DependentUpon>StudentDashboard.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Migrations\202210140929106_newmigration2.resx">
+      <DependentUpon>202210140929106_newmigration2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202210110139453_RemovingMultiAnswerTable.resx">
-      <DependentUpon>202210110139453_RemovingMultiAnswerTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210140939093_newmigration3.resx">
+      <DependentUpon>202210140939093_newmigration3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,14 +189,44 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\CoursesFrm.resx">
+      <DependentUpon>CoursesFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ExamFrm.resx">
       <DependentUpon>ExamFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExamListFrm.resx">
+      <DependentUpon>ExamListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmStudents.resx">
+      <DependentUpon>FrmStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Branches.resx">
+      <DependentUpon>Frm_Branches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Instructors.resx">
+      <DependentUpon>Frm_Instructors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Intakes.resx">
+      <DependentUpon>Frm_Intakes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Results.resx">
+      <DependentUpon>Frm_Results.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Frm_Tracks.resx">
+      <DependentUpon>Frm_Tracks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InstructorDashboard.resx">
+      <DependentUpon>InstructorDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login_Frm.resx">
       <DependentUpon>Login_Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StudentDashboard.resx">
+      <DependentUpon>StudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -174,6 +262,69 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LoginButtonIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StudentsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_students_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_exam_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_department_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_training_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_course_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_tracks_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_system_report_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_ratings_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_open_pane_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_dashboard_layout_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OnlineExam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_24px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_24px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_png_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCourseIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveCourseIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -11,6 +11,16 @@ namespace Models
     [Table ("Track")]
     public class Track
     {
+        static Context context;
+        public static bool IsSuccessful;
+        public static string Message;
+
+        static Track()
+        {
+            context = new Context();
+            IsSuccessful = false;
+            Message = "";
+        }
         public Track()
         {
             Students = new HashSet<Student>();
@@ -33,6 +43,50 @@ namespace Models
         public virtual ICollection<Intake> Intakes { get; set; }
 
         public virtual ICollection<Branch> Branches { get; set; }
+
+        public static int TracksCount()
+        {
+            return context.Tracks.Count();
+        }
+
+        public static IList<Track> GetAllTracks()
+        {
+            return context.Tracks.ToList();
+        }
+
+        public static void AddTrack(Track track)
+        {
+            if(track.Name == String.Empty)
+            {
+                IsSuccessful = false;
+                Message = "Track Name Can't Be Empty";
+            }
+            else if(track.Instructor == null)
+            {
+                Message = "Please Determine Track Manager";
+                IsSuccessful = false;
+            }
+            else
+            {
+                try
+                {
+                    context.Tracks.Add(track);
+                    context.SaveChanges();
+                    Message = $"Track {track.Name} Added Successfully!";
+                    IsSuccessful = true;
+                }
+                catch(Exception ex)
+                {
+                    Message = ex.Message;
+                    IsSuccessful = false;
+                }
+            }
+        }
+
+        public static IList<Track> GetTracksByValue(string value)
+        {
+            return context.Tracks.Where(T => T.Name.Contains(value) || T.Description.Contains(value)).ToList();
+        }
 
     }
 }

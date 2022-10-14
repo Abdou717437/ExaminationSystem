@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_Login = new Responsive_Design.Anmh_Controls.AnmhButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -43,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_Login = new Responsive_Design.Anmh_Controls.AnmhButton();
             this.btn_Exit = new Responsive_Design.Anmh_Controls.AnmhButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
@@ -117,28 +117,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 530);
             this.panel2.TabIndex = 1;
-            // 
-            // btn_Login
-            // 
-            this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.btn_Login.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.btn_Login.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.btn_Login.BorderRadius = 20;
-            this.btn_Login.BorderSize = 0;
-            this.btn_Login.FlatAppearance.BorderSize = 0;
-            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Login.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.ForeColor = System.Drawing.Color.White;
-            this.btn_Login.Image = global::Examination_System_ITI.Properties.Resources.LoginButtonIcon;
-            this.btn_Login.Location = new System.Drawing.Point(285, 451);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(150, 57);
-            this.btn_Login.TabIndex = 2;
-            this.btn_Login.Text = "Log In";
-            this.btn_Login.TextColor = System.Drawing.Color.White;
-            this.btn_Login.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_Login.UseVisualStyleBackColor = false;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // panel3
             // 
@@ -243,6 +221,28 @@
             this.label3.Size = new System.Drawing.Size(217, 70);
             this.label3.TabIndex = 1;
             this.label3.Text = "LOGIN";
+            // 
+            // btn_Login
+            // 
+            this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btn_Login.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btn_Login.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btn_Login.BorderRadius = 20;
+            this.btn_Login.BorderSize = 0;
+            this.btn_Login.FlatAppearance.BorderSize = 0;
+            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Login.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Login.ForeColor = System.Drawing.Color.White;
+            this.btn_Login.Image = global::Examination_System_ITI.Properties.Resources.LoginButtonIcon;
+            this.btn_Login.Location = new System.Drawing.Point(285, 451);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(150, 57);
+            this.btn_Login.TabIndex = 2;
+            this.btn_Login.Text = "Log In";
+            this.btn_Login.TextColor = System.Drawing.Color.White;
+            this.btn_Login.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Login.UseVisualStyleBackColor = false;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // btn_Exit
             // 

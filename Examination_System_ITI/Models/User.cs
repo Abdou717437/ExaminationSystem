@@ -38,16 +38,17 @@ namespace Models
 
         public static void Login(User user)
         {
+            
             try
             {
                 if (user.User_Name != string.Empty && user.Password != string.Empty)
                 {
-                    user = ctx.Users.FirstOrDefault(a => a.User_Name.Equals(user.User_Name));
-                    if (user != null)
+                    var loginUser = ctx.Users.FirstOrDefault(a => a.User_Name.Equals(user.User_Name));
+                    if (loginUser != null)
                     {
-                        if (user.Password.Equals(user.Password))
+                        if (loginUser.Password.Equals(user.Password))
                         {
-                            CurrentUser = user;
+                            CurrentUser = loginUser;
                             Message = $"Login Success! Welcom {CurrentUser.User_Name}";
                             IsSuccessful = true;
                             return;

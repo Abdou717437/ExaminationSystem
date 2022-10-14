@@ -26,6 +26,7 @@ namespace Examination_System_ITI.Views
         private void Login_Frm_Load(object sender, EventArgs e)
         {
             txtUsername.Focus();
+            
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -43,6 +44,8 @@ namespace Examination_System_ITI.Views
             }
             else
             {
+                txtUsername.Clear();
+                txtPassword.Clear();
                 MessageBox.Show(User.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
