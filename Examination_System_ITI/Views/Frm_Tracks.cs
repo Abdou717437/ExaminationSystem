@@ -1,8 +1,10 @@
 ﻿using Models;
 using System;
+using System.Activities.Statements;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,8 +15,20 @@ namespace Examination_System_ITI.Views
 {
     public partial class Frm_Tracks : Form
     {
-        Track track;
-        IList<Track> Tracks;
+        Instructor manager;
+        IList<Course> SelectedCourses;
+        Context context;
+        public DataGridView Tracks_Dgv
+        {
+            get { return dgvTracks; }
+            set { dgvTracks = value; }
+        }
+
+        public ComboBox Manager_Combox
+        {
+            get { return comBox_Manager; }
+            set { comBox_Manager = value; }
+        }
         public static ComboBox Instructors_ComBox
         {
             get { return Instructors_ComBox; }
@@ -23,8 +37,8 @@ namespace Examination_System_ITI.Views
         public Frm_Tracks()
         {
             InitializeComponent();
-            track = new Track();
-            Tracks = new List<Track>();
+            manager = new Instructor();
+            SelectedCourses = new List<Course>();
         }
 
         private void btnAddTrack_Click(object sender, EventArgs e)
@@ -36,15 +50,11 @@ namespace Examination_System_ITI.Views
         private void Frm_Tracks_Load(object sender, EventArgs e)
         {
             grBoxTrackInfo.Visible=false;
-            var list = Course.GetAllCourses().ToList();
-            foreach (var item in list)
-            {
-                coursesList.Items.Add(item);
-            }
-            comBox_Manager.Items.Clear();
-            //Instructor.GetAllInstructors(this);
-            comBox_Manager.DisplayMember = "User_Name";
-            comBox_Manager.ValueMember = "Id";
+            //var list = Course.GetAllCourses().ToList();
+            //foreach (var item in list)
+            //{
+            //    coursesList.Items.Add(item);
+            //}
             coursesList.DisplayMember = "Name";
             coursesList.ValueMember = "Id";
             listBox_AddedCoursesList.Items.Clear();
@@ -54,38 +64,52 @@ namespace Examination_System_ITI.Views
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
-            track.Name = Txt_Name.Text;
-            track.Description= Txt_Desc.Text;
-            track.IsActive = toggleBtnActivateTrack.Checked;
-            track.Instructor = (Instructor)comBox_Manager.SelectedItem;
-            track.Courses = listBox_AddedCoursesList.Items as IList<Course>;
-            Track.AddTrack(track);
-            Tracks.Clear();
-            Tracks = Track.GetAllTracks();
-            FillDataGridView();
-            dgvTracks.Refresh();
-            if (Track.IsSuccessful)
-                MessageBox.Show(Track.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show(Track.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            int Manager_Id = 0;
+            if (comBox_Manager.SelectedValue != null)
+                Manager_Id = (int)comBox_Manager.SelectedValue;
+            try
+            {
+                using (var context = new Context())
+                {
+                    
+                    context.Instructors.Find(Manager_Id);
+                    Track track = new Track()
+                    {
+                        Name = Txt_Name.Text,
+                        Description = Txt_Desc.Text,
+                        IsActive = toggleBtnActivateTrack.Checked,
+                        Instructor = manager,
+                    };
+
+                    if (listBox_AddedCoursesList.Items.Count > 0)
+                    {
+                        
+                        foreach (Course C in listBox_AddedCoursesList.Items)
+                        {
+                            var c = context.Courses.Find(C.Id);
+                            c.Tracks.Add(track);
+
+                            context.Courses.Attach(C);
+                        }
+                        context.Tracks.Add(track);
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Select Some Courses For Track");
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         #region Methods
-        public void FillDataGridView()
-        {
-            foreach (var track in Tracks)
-            {
-                dgvTracks.Rows.Add(
-                                new object[]
-                                {
-                                    track.Id,
-                                    track.Name,
-                                    track.Description,
-                                    track.IsActive,
-                                    track.Instructor.F_Name + " "+track.Instructor.L_Name,
-                                });
-            }
-        }
+       
 
         public void Clear()
         {
@@ -130,27 +154,19 @@ namespace Examination_System_ITI.Views
         private void Txt_Search_TextChanged(object sender, EventArgs e)
         {
             if (Txt_Search.Text != string.Empty)
-            {
-                Tracks.Clear();
-                Tracks = Track.GetTracksByValue(Txt_Search.Text);
-                FillDataGridView();
-                dgvTracks.Refresh();
+            {   
+                Track.GetTracksByValue(Txt_Search.Text,this);
             }
             else
             {
-                Tracks.Clear();
-                Tracks = Track.GetAllTracks();
-                FillDataGridView();
-                dgvTracks.Refresh();
+                 Track.GetAllTracks(this);
             }
         }
 
         private void Frm_Tracks_Shown(object sender, EventArgs e)
         {
-            Tracks.Clear();
-            Tracks = Track.GetAllTracks();
-            FillDataGridView();
-            dgvTracks.Refresh();
+            Track.GetAllTracks(this);
+            Track.GetTracksManagers(this);
         }
     }
 }

@@ -19,28 +19,31 @@ namespace Models
             IsSuccessful = true;
             Message = "";
         }
-        public Exam()
-        {
-            Exam_Results = new HashSet<Exam_Result>();
-            Students = new HashSet<Student>();
-            Students_Answers = new HashSet<Student_Answer>();
-            Exam_Questions = new HashSet<Exam_Question>();
-        }
+
         public int Id { get; set; }
-        public int Code { get; set; }
+
+        [MaxLength(100),MinLength(10),Required]
+        public string Code { get; set; }
+        
+        [MaxLength(50),MinLength(10),Required]
         public string Name { get; set; }
+
+        [Required]
         public DateTime St_Time { get; set; }
         public DateTime En_Time { get; set; }
-        public string Exam_Type { get; set; }
 
-        public virtual Instructor Instructor { get; set; }
+        [Required]
+        public bool Exam_Type { get; set; }
+
+        public int InstructorId { get; set; }
+        public Instructor Instructor { get; set; }
+        public int CourseId { get; set; }
         public virtual Course Course { get; set; }
-        public virtual ICollection<Exam_Result> Exam_Results { get; set; }
-        public virtual ICollection<Student> Students { get; set; }
+        public ICollection<Exam_Result> Exam_Results { get; set; } = new HashSet<Exam_Result>();
 
-        public virtual ICollection<Student_Answer> Students_Answers { get; set; }
+        public ICollection<Student> Students { get; set; } = new HashSet<Student>();
 
-        public virtual ICollection<Exam_Question> Exam_Questions { get; set; }
+        public ICollection<Exam_Question> Exam_Questions { get; set; } = new HashSet<Exam_Question>();
 
         public static int ExamsCount()
         {

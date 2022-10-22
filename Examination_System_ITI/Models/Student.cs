@@ -16,12 +16,7 @@ namespace Models
         {
             context = new Context();
         }
-        public Student()
-        {
-            Student_Answers = new HashSet<Student_Answer>();
-            Exams = new HashSet<Exam>();
-            Results = new HashSet<Exam_Result>();
-        }
+
         [Required, MaxLength(10)]
         public string F_Name { get; set; }
 
@@ -37,11 +32,11 @@ namespace Models
 
         public string Email { get; set; }
 
-        public virtual ICollection<Exam> Exams { get; set; }
+        public ICollection<Exam> Exams { get; set; } = new HashSet<Exam>();
 
-        public virtual ICollection<Student_Answer> Student_Answers { get; set; }
+        public ICollection<Student_Answer> Student_Answers { get; set; } = new HashSet<Student_Answer>();
 
-        public virtual ICollection<Exam_Result> Results { get; set; }
+        public ICollection<Exam_Result> Results { get; set; }  = new HashSet<Exam_Result>();
 
         public int? TrackId { get; set; }
         public virtual Track Track { get; set; }
@@ -84,6 +79,11 @@ namespace Models
                 Message = "NID Can't Be Empty!";
                 IsSuccessful = false;
             }
+            else if(student.Track == null)
+            {
+                Message = "Track Can't Be Empty!";
+                IsSuccessful = false;
+            }
             else
             {
                 try
@@ -106,28 +106,33 @@ namespace Models
         public static void GetAllStudents( FrmStudents frm)
         {
             frm.Students_Dgv.DataSource =
-            frm.Tracks_ComBox.DataSource =
-                context.Instructors.Where(I => I.Role.UserRole == "Student").Select(I => new
-               
+                context.Students.Where(I => I.Role.UserRole == "").Select(I => new
                 {
                     Id = I.Id,
                     Name = I.F_Name + " " + I.L_Name,
                     Username = I.User_Name,
-                    NID = I.National_Id,
+                    NID = I.N_ID,
                     Phone = I.Phone,
                     Email = I.Email,
-                    Branch = I.Branch.Name,
-                    Supervisor = I.Supervisor,
+                    Branch = I.Track.Name,
                 }).ToList();
             frm.Students_Dgv.Refresh();
-            frm.Tracks_ComBox.ValueMember = "Id";
-            frm.Tracks_ComBox.DisplayMember = "Username";
         }
 
-        public static IList<Student> GetAllByValue(string value)
+        public static void GetAllByValue(string value, FrmStudents frm)
         {
-            var students = context.Students.Where(c => c.F_Name == value).ToList();
-            return students;
+            frm.Students_Dgv.DataSource =
+                context.Students.Where(I => I.Role.UserRole == "Student").Select(I => new
+                {
+                    Id = I.Id,
+                    Name = I.F_Name + " " + I.L_Name,
+                    Username = I.User_Name,
+                    NID = I.N_ID,
+                    Phone = I.Phone,
+                    Email = I.Email,
+                    Branch = I.Track.Name,
+                }).ToList();
+            frm.Students_Dgv.Refresh();
         }
     }
 }

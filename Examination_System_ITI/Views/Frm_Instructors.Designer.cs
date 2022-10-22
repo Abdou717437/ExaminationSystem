@@ -32,10 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAddCourse = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.Txt_Search = new System.Windows.Forms.TextBox();
-            this.BtnSearch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.grBoxInstructorsInfo = new System.Windows.Forms.GroupBox();
             this.btn_GetUserImage = new System.Windows.Forms.Button();
             this.pBox_UserImage = new System.Windows.Forms.PictureBox();
@@ -69,12 +65,15 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.Txt_Id = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Txt_Search = new System.Windows.Forms.TextBox();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvInstructors = new System.Windows.Forms.DataGridView();
             this.Btn_Save = new Responsive_Design.Anmh_Controls.AnmhButton();
             this.Btn_Refresh = new Responsive_Design.Anmh_Controls.AnmhButton();
             this.btn_Cancel = new Responsive_Design.Anmh_Controls.AnmhButton();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.grBoxInstructorsInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_UserImage)).BeginInit();
             this.panel7.SuspendLayout();
@@ -87,6 +86,7 @@
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInstructors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,56 +116,6 @@
             this.btnAddCourse.TabIndex = 3;
             this.btnAddCourse.UseVisualStyleBackColor = true;
             this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.Txt_Search);
-            this.panel4.Controls.Add(this.BtnSearch);
-            this.panel4.Location = new System.Drawing.Point(384, 11);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(533, 50);
-            this.panel4.TabIndex = 1;
-            // 
-            // Txt_Search
-            // 
-            this.Txt_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Search.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_Search.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
-            this.Txt_Search.Location = new System.Drawing.Point(66, 11);
-            this.Txt_Search.Name = "Txt_Search";
-            this.Txt_Search.Size = new System.Drawing.Size(450, 29);
-            this.Txt_Search.TabIndex = 3;
-            this.Txt_Search.TextChanged += new System.EventHandler(this.Txt_Search_TextChanged);
-            // 
-            // BtnSearch
-            // 
-            this.BtnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnSearch.FlatAppearance.BorderSize = 0;
-            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSearch.Image = global::Examination_System_ITI.Properties.Resources.icons8_search_24px_2;
-            this.BtnSearch.Location = new System.Drawing.Point(9, 7);
-            this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(37, 34);
-            this.BtnSearch.TabIndex = 2;
-            this.BtnSearch.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(145, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Search Instructors";
             // 
             // grBoxInstructorsInfo
             // 
@@ -239,6 +189,7 @@
             this.comBox_Supervisor.Name = "comBox_Supervisor";
             this.comBox_Supervisor.Size = new System.Drawing.Size(198, 31);
             this.comBox_Supervisor.TabIndex = 1;
+            this.comBox_Supervisor.SelectedIndexChanged += new System.EventHandler(this.comBox_Supervisor_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -337,6 +288,7 @@
             this.comBox_Branch.Name = "comBox_Branch";
             this.comBox_Branch.Size = new System.Drawing.Size(198, 31);
             this.comBox_Branch.TabIndex = 1;
+            this.comBox_Branch.SelectedIndexChanged += new System.EventHandler(this.comBox_Branch_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -556,6 +508,56 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Id: ";
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.Txt_Search);
+            this.panel4.Controls.Add(this.BtnSearch);
+            this.panel4.Location = new System.Drawing.Point(384, 11);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(533, 50);
+            this.panel4.TabIndex = 1;
+            // 
+            // Txt_Search
+            // 
+            this.Txt_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Search.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_Search.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
+            this.Txt_Search.Location = new System.Drawing.Point(66, 11);
+            this.Txt_Search.Name = "Txt_Search";
+            this.Txt_Search.Size = new System.Drawing.Size(450, 29);
+            this.Txt_Search.TabIndex = 3;
+            this.Txt_Search.TextChanged += new System.EventHandler(this.Txt_Search_TextChanged);
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnSearch.FlatAppearance.BorderSize = 0;
+            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSearch.Image = global::Examination_System_ITI.Properties.Resources.icons8_search_24px_2;
+            this.BtnSearch.Location = new System.Drawing.Point(9, 7);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(37, 34);
+            this.BtnSearch.TabIndex = 2;
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(145, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(208, 27);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Search Instructors";
+            // 
             // dgvInstructors
             // 
             this.dgvInstructors.AllowUserToAddRows = false;
@@ -680,8 +682,6 @@
             this.Shown += new System.EventHandler(this.Frm_Instructors_Shown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.grBoxInstructorsInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBox_UserImage)).EndInit();
             this.panel7.ResumeLayout(false);
@@ -704,6 +704,8 @@
             this.panel8.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInstructors)).EndInit();
             this.ResumeLayout(false);
 

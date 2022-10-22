@@ -54,7 +54,7 @@ namespace Models
         }
 
         #region Methods
-        public static void AddInstructor(Instructor instructor)
+        public static void AddInstructor(Instructor instructor, Frm_Instructors frm)
         {
             if (instructor.F_Name == String.Empty)
             {
@@ -107,7 +107,7 @@ namespace Models
         public static void GetAllInstructors(Frm_Instructors frm)
         {
             frm.Instructors_Dgv.DataSource=
-            frm.comBox_Instructors.DataSource =
+            frm.Instructor_ComBox.DataSource =
                 context.Instructors.Select(I => new 
                     {
                         Id = I.Id ,Name = I.F_Name + " " +I.L_Name,Username = I.User_Name,
@@ -115,16 +115,15 @@ namespace Models
                         Supervisor  = I.Supervisor ,
                 }).ToList();
             frm.Instructors_Dgv.Refresh();
-            frm.comBox_Instructors.ValueMember = "Id";
-            frm.comBox_Instructors.DisplayMember = "Username";
+            frm.Instructor_ComBox.ValueMember = "Id";
+            frm.Instructor_ComBox.DisplayMember = "Username";
         }
 
         public static void GetAllByValue(string value, Frm_Instructors frm)
         {
             frm.Instructors_Dgv.DataSource =
-                context.Instructors.Where(  I => I.F_Name.Contains(value) ||
-                                            I.L_Name.Contains(value) ||
-                                            I.User_Name.Contains(value))
+                context.Instructors.Where(I => I.F_Name.Contains(value) ||
+                                            I.L_Name.Contains(value))
                                             .Select(I => new
                                             {
                                                 Id = I.Id,
@@ -134,9 +133,15 @@ namespace Models
                                                 Phone = I.Phone,
                                                 Email = I.Email,
                                                 Branch = I.Branch.Name,
-                                                Supervisor = I.Supervisor}).ToList();
+                                                Supervisor = I.Supervisor.User_Name
+                                            }).ToList();
 
             frm.Instructors_Dgv.Refresh();
+        }
+
+        public static Instructor GetInstructor(int Id)
+        {
+            return context.Instructors.Find(Id);
         }
 
         #endregion

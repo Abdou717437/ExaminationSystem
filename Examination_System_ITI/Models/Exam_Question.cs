@@ -12,11 +12,9 @@ namespace Models
     {
         public int Id { get; set; }
         public int Points { get; set; }
-        
         public Exam Exam { get; set; }
+        public Question_Bank Question_Bank { get; set; }
 
-        public virtual Question_Bank Question_Bank { get; set; }
-
-
+        public ICollection <Student_Answer> Question_Answers { get; set; }
     }
 }

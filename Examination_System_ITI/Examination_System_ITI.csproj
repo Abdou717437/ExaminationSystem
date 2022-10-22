@@ -43,6 +43,7 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -69,13 +70,13 @@
     <Compile Include="Custom Tools\AnmhToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Migrations\202210140929106_newmigration2.cs" />
-    <Compile Include="Migrations\202210140929106_newmigration2.designer.cs">
-      <DependentUpon>202210140929106_newmigration2.cs</DependentUpon>
+    <Compile Include="Migrations\202210160557026_new2.cs" />
+    <Compile Include="Migrations\202210160557026_new2.designer.cs">
+      <DependentUpon>202210160557026_new2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202210140939093_newmigration3.cs" />
-    <Compile Include="Migrations\202210140939093_newmigration3.designer.cs">
-      <DependentUpon>202210140939093_newmigration3.cs</DependentUpon>
+    <Compile Include="Migrations\202210161025073_new3.cs" />
+    <Compile Include="Migrations\202210161025073_new3.designer.cs">
+      <DependentUpon>202210161025073_new3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Student_Answer.cs" />
@@ -100,6 +101,12 @@
     </Compile>
     <Compile Include="Views\CoursesFrm.Designer.cs">
       <DependentUpon>CoursesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateExam_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CreateExam_Frm.Designer.cs">
+      <DependentUpon>CreateExam_Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ExamFrm.cs">
       <SubType>Form</SubType>
@@ -167,17 +174,23 @@
     <Compile Include="Views\MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\QuestionsFrmcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionsFrmcs.Designer.cs">
+      <DependentUpon>QuestionsFrmcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\StudentDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\StudentDashboard.Designer.cs">
       <DependentUpon>StudentDashboard.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202210140929106_newmigration2.resx">
-      <DependentUpon>202210140929106_newmigration2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210160557026_new2.resx">
+      <DependentUpon>202210160557026_new2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202210140939093_newmigration3.resx">
-      <DependentUpon>202210140939093_newmigration3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210161025073_new3.resx">
+      <DependentUpon>202210161025073_new3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -191,6 +204,9 @@
     </Compile>
     <EmbeddedResource Include="Views\CoursesFrm.resx">
       <DependentUpon>CoursesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CreateExam_Frm.resx">
+      <DependentUpon>CreateExam_Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExamFrm.resx">
       <DependentUpon>ExamFrm.cs</DependentUpon>
@@ -225,10 +241,17 @@
     <EmbeddedResource Include="Views\MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionsFrmcs.resx">
+      <DependentUpon>QuestionsFrmcs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\StudentDashboard.resx">
       <DependentUpon>StudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Models.Course.datasource" />
+    <None Include="Properties\DataSources\Models.Exam_Question.datasource" />
+    <None Include="Properties\DataSources\Models.Question_Bank.datasource" />
+    <None Include="Properties\DataSources\Models.Track.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -326,6 +349,7 @@
   <ItemGroup>
     <None Include="Resources\RemoveCourseIcon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

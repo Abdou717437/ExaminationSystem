@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Examination_System_ITI.Views;
 
 namespace Models
 {
@@ -12,8 +13,8 @@ namespace Models
     public class Branch
     {
         static Context context;
-        static bool IsSuccessful;
-        static string Message;
+        public static bool IsSuccessful;
+        public static string Message;
         static Branch()
         {
             context = new Context();
@@ -74,14 +75,36 @@ namespace Models
             }
         }
 
-        public static IList<Branch> GetAllBranches()
+        public static void GetAllBranches( Frm_Branches frm)
         {
-            return context.Branches.ToList();
-        }  
+            frm.Branches_Dgv.DataSource =
+                context.Branches.Select(B => new
+                {
+                    Id = B.Id,
+                    Name = B.Name,
+                    Description = B.Description,
+                    Manager = B.Instructor.User_Name
+                }).ToList();
+            frm.Branches_Dgv.Refresh();
+        }
 
-        public static IList<Branch> GetBranchesByValue(string value)
+        public static Branch GetBranch(int Id)
         {
-            return context.Branches.Where(B => B.Name.Contains(value) || B.Instructor.User_Name.Contains(value) || B.Description.Contains(value)).ToList();
+            return context.Branches.Find(Id);
+        }
+
+        public static void GetBranchesByValue(string value, Frm_Branches frm)
+        {
+            frm.Branches_Dgv.DataSource =
+               context.Branches.Where(B => B.Name.Contains(value) || B.Description.Contains(value))
+               .Select(B => new
+               {
+                   Id = B.Id,
+                   Name = B.Name,
+                   Description = B.Description,
+                   Manager = B.Instructor.User_Name
+               }).ToList();
+            frm.Branches_Dgv.Refresh();
         }
         #endregion
     }

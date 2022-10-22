@@ -12,11 +12,10 @@ namespace Models
 
         public string Answer { get; set; }
         
-        public virtual Exam_Question Question { get; set; }
+        public int QuestionId { get; set; }
+        public Exam_Question Question { get; set; }
 
-        public virtual Exam Exam { get; set; }
-
-        public virtual Student Student { get; set; }
-
+        public int StudentId { get; set; }
+        public Student Student { get; set; }
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBranches = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.grBoxCourseInfo = new System.Windows.Forms.GroupBox();
+            this.grBoxBranchInfo = new System.Windows.Forms.GroupBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.Txt_Desc = new System.Windows.Forms.TextBox();
@@ -53,13 +53,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddBranch = new System.Windows.Forms.Button();
             this.BtnSearch = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Track_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.End_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBranches)).BeginInit();
             this.panel2.SuspendLayout();
-            this.grBoxCourseInfo.SuspendLayout();
+            this.grBoxBranchInfo.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -77,30 +73,25 @@
             this.dgvBranches.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBranches.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBranches.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 10, 5, 10);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBranches.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBranches.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBranches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBranches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Track_Name,
-            this.Desc,
-            this.End_Date});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 11F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBranches.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBranches.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBranches.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBranches.EnableHeadersVisualStyles = false;
             this.dgvBranches.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(111)))));
@@ -118,7 +109,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnAddBranch);
-            this.panel2.Controls.Add(this.grBoxCourseInfo);
+            this.panel2.Controls.Add(this.grBoxBranchInfo);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -127,25 +118,25 @@
             this.panel2.Size = new System.Drawing.Size(1233, 348);
             this.panel2.TabIndex = 11;
             // 
-            // grBoxCourseInfo
+            // grBoxBranchInfo
             // 
-            this.grBoxCourseInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.grBoxBranchInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grBoxCourseInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.grBoxCourseInfo.Controls.Add(this.panel9);
-            this.grBoxCourseInfo.Controls.Add(this.Btn_Save);
-            this.grBoxCourseInfo.Controls.Add(this.Btn_Refresh);
-            this.grBoxCourseInfo.Controls.Add(this.btn_Cancel);
-            this.grBoxCourseInfo.Controls.Add(this.panel1);
-            this.grBoxCourseInfo.Controls.Add(this.panel6);
-            this.grBoxCourseInfo.Controls.Add(this.panel5);
-            this.grBoxCourseInfo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grBoxCourseInfo.ForeColor = System.Drawing.Color.White;
-            this.grBoxCourseInfo.Location = new System.Drawing.Point(63, 80);
-            this.grBoxCourseInfo.Name = "grBoxCourseInfo";
-            this.grBoxCourseInfo.Size = new System.Drawing.Size(1114, 254);
-            this.grBoxCourseInfo.TabIndex = 2;
-            this.grBoxCourseInfo.TabStop = false;
+            this.grBoxBranchInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.grBoxBranchInfo.Controls.Add(this.panel9);
+            this.grBoxBranchInfo.Controls.Add(this.Btn_Save);
+            this.grBoxBranchInfo.Controls.Add(this.Btn_Refresh);
+            this.grBoxBranchInfo.Controls.Add(this.btn_Cancel);
+            this.grBoxBranchInfo.Controls.Add(this.panel1);
+            this.grBoxBranchInfo.Controls.Add(this.panel6);
+            this.grBoxBranchInfo.Controls.Add(this.panel5);
+            this.grBoxBranchInfo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grBoxBranchInfo.ForeColor = System.Drawing.Color.White;
+            this.grBoxBranchInfo.Location = new System.Drawing.Point(63, 80);
+            this.grBoxBranchInfo.Name = "grBoxBranchInfo";
+            this.grBoxBranchInfo.Size = new System.Drawing.Size(1114, 254);
+            this.grBoxBranchInfo.TabIndex = 2;
+            this.grBoxBranchInfo.TabStop = false;
             // 
             // panel9
             // 
@@ -203,6 +194,7 @@
             this.Btn_Save.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.Btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.Btn_Save.UseVisualStyleBackColor = false;
+            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
             // 
             // Btn_Refresh
             // 
@@ -225,6 +217,7 @@
             this.Btn_Refresh.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.Btn_Refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.Btn_Refresh.UseVisualStyleBackColor = false;
+            this.Btn_Refresh.Click += new System.EventHandler(this.Btn_Refresh_Click);
             // 
             // btn_Cancel
             // 
@@ -247,6 +240,7 @@
             this.btn_Cancel.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // panel1
             // 
@@ -372,6 +366,7 @@
             this.Txt_Search.Name = "Txt_Search";
             this.Txt_Search.Size = new System.Drawing.Size(432, 29);
             this.Txt_Search.TabIndex = 3;
+            this.Txt_Search.TextChanged += new System.EventHandler(this.Txt_Search_TextChanged);
             // 
             // label1
             // 
@@ -396,6 +391,7 @@
             this.btnAddBranch.Size = new System.Drawing.Size(60, 49);
             this.btnAddBranch.TabIndex = 3;
             this.btnAddBranch.UseVisualStyleBackColor = true;
+            this.btnAddBranch.Click += new System.EventHandler(this.btnAddBranch_Click);
             // 
             // BtnSearch
             // 
@@ -410,34 +406,6 @@
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.UseVisualStyleBackColor = true;
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "ID";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Track_Name
-            // 
-            this.Track_Name.HeaderText = "Name";
-            this.Track_Name.MinimumWidth = 6;
-            this.Track_Name.Name = "Track_Name";
-            this.Track_Name.ReadOnly = true;
-            // 
-            // Desc
-            // 
-            this.Desc.HeaderText = "Description";
-            this.Desc.MinimumWidth = 6;
-            this.Desc.Name = "Desc";
-            this.Desc.ReadOnly = true;
-            // 
-            // End_Date
-            // 
-            this.End_Date.HeaderText = "Manager";
-            this.End_Date.MinimumWidth = 6;
-            this.End_Date.Name = "End_Date";
-            this.End_Date.ReadOnly = true;
-            // 
             // Frm_Branches
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -447,10 +415,12 @@
             this.Controls.Add(this.panel2);
             this.Name = "Frm_Branches";
             this.Text = "Frm_Branches";
+            this.Load += new System.EventHandler(this.Frm_Branches_Load);
+            this.Shown += new System.EventHandler(this.Frm_Branches_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBranches)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.grBoxCourseInfo.ResumeLayout(false);
+            this.grBoxBranchInfo.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -470,7 +440,7 @@
         private System.Windows.Forms.DataGridView dgvBranches;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnAddBranch;
-        private System.Windows.Forms.GroupBox grBoxCourseInfo;
+        private System.Windows.Forms.GroupBox grBoxBranchInfo;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Txt_Desc;
@@ -490,9 +460,5 @@
         private System.Windows.Forms.TextBox Txt_Search;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Track_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Desc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn End_Date;
     }
 }

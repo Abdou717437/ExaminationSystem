@@ -31,14 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvExams = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExamDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExamTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrackName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InstructorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAddExam = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -70,15 +62,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvExams.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvExams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExams.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Name,
-            this.Code,
-            this.ExamDate,
-            this.ExamTime,
-            this.TrackName,
-            this.CourseName,
-            this.InstructorName});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 11F);
@@ -100,62 +83,6 @@
             this.dgvExams.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExams.Size = new System.Drawing.Size(1277, 594);
             this.dgvExams.TabIndex = 8;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "ID";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            // 
-            // Code
-            // 
-            this.Code.HeaderText = "Exam Code";
-            this.Code.MinimumWidth = 6;
-            this.Code.Name = "Code";
-            this.Code.ReadOnly = true;
-            // 
-            // ExamDate
-            // 
-            this.ExamDate.HeaderText = "Exam Date";
-            this.ExamDate.MinimumWidth = 6;
-            this.ExamDate.Name = "ExamDate";
-            this.ExamDate.ReadOnly = true;
-            // 
-            // ExamTime
-            // 
-            this.ExamTime.HeaderText = "Time Allowed";
-            this.ExamTime.MinimumWidth = 6;
-            this.ExamTime.Name = "ExamTime";
-            this.ExamTime.ReadOnly = true;
-            // 
-            // TrackName
-            // 
-            this.TrackName.HeaderText = "Track Name";
-            this.TrackName.MinimumWidth = 6;
-            this.TrackName.Name = "TrackName";
-            this.TrackName.ReadOnly = true;
-            // 
-            // CourseName
-            // 
-            this.CourseName.HeaderText = "Course Name";
-            this.CourseName.MinimumWidth = 6;
-            this.CourseName.Name = "CourseName";
-            this.CourseName.ReadOnly = true;
-            // 
-            // InstructorName
-            // 
-            this.InstructorName.HeaderText = "Instructor";
-            this.InstructorName.MinimumWidth = 6;
-            this.InstructorName.Name = "InstructorName";
-            this.InstructorName.ReadOnly = true;
             // 
             // panel2
             // 
@@ -187,6 +114,7 @@
             this.btnAddExam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddExam.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAddExam.UseVisualStyleBackColor = true;
+            this.btnAddExam.Click += new System.EventHandler(this.btnAddExam_Click);
             // 
             // panel4
             // 
@@ -212,6 +140,7 @@
             this.Txt_Search.Name = "Txt_Search";
             this.Txt_Search.Size = new System.Drawing.Size(476, 29);
             this.Txt_Search.TabIndex = 3;
+            this.Txt_Search.TextChanged += new System.EventHandler(this.Txt_Search_TextChanged);
             // 
             // BtnSearch
             // 
@@ -244,6 +173,7 @@
             this.ClientSize = new System.Drawing.Size(1277, 714);
             this.Controls.Add(this.dgvExams);
             this.Controls.Add(this.panel2);
+            this.Name = "ExamListFrm";
             this.Text = "ExamListFrm";
             this.Shown += new System.EventHandler(this.ExamListFrm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExams)).EndInit();
@@ -264,13 +194,5 @@
         private System.Windows.Forms.TextBox Txt_Search;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExamDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExamTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrackName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InstructorName;
     }
 }

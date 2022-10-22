@@ -17,16 +17,11 @@ namespace Models
         public string Body { get; set; }
 
         public string Correct_Answer { get; set; }
-       
+        public int CourseId { get; set; }
         public virtual Course Course { get; set; }
 
-        public virtual ICollection<Exam_Question> Exam_Questions { get; set; }
-
         public virtual Question_Option Question_Option { get; set; }
-
-
         
-        
-        
+        public virtual ICollection<Exam_Question> Exam_Questions { get; set; }
     }
 }

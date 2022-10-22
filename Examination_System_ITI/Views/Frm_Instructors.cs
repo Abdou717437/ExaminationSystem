@@ -12,21 +12,31 @@ using System.Windows.Forms;
 namespace Examination_System_ITI.Views
 {
     public partial class Frm_Instructors : Form
-    { 
+    {
+        Branch branch;
+        Instructor supervisor;
         public DataGridView Instructors_Dgv
         {
             get { return this.dgvInstructors; }   
             set { dgvInstructors = value; }
         }
 
-        public ComboBox comBox_Instructors
+        public ComboBox Instructor_ComBox
         {
             get { return comBox_Supervisor; }
-            set { comBox_Supervisor = value; }
+            set { comBox_Supervisor = value; }  
+        }
+
+        public ComboBox Branch_ComBox
+        {
+            get { return comBox_Branch; }
+            set { comBox_Branch = value; }
         }
         public Frm_Instructors()
         {
             InitializeComponent();   
+            branch = new Branch();
+            supervisor = new Instructor();
         }
 
         private void btnAddCourse_Click(object sender, EventArgs e)
@@ -53,6 +63,16 @@ namespace Examination_System_ITI.Views
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
+
+            int Branch_id = 0;
+            int InstructorId = 0;
+            if(comBox_Branch.SelectedValue != null)
+                Branch_id = (int)comBox_Branch.SelectedValue;
+            if(comBox_Supervisor.SelectedValue != null)
+                InstructorId = (int)comBox_Supervisor.SelectedValue;
+            
+            supervisor = Instructor.GetInstructor(InstructorId);
+            branch = Branch.GetBranch(Branch_id);
             Instructor.AddInstructor(
                     new Instructor()
                     {
@@ -63,11 +83,11 @@ namespace Examination_System_ITI.Views
                         National_Id = txt_NID.Text,
                         Phone = txt_Phone.Text,
                         Email = txt_Email.Text,
-                        Branch = (Branch)comBox_Branch.SelectedValue,
                         Role = new Role { UserRole = "Instructor" },
-                        Supervisor = comBox_Supervisor.SelectedValue as Instructor
+                        Branch = branch,
+                        Supervisor = supervisor,
                     }
-                ) ;
+                , this) ;
             Instructor.GetAllInstructors(this);
             if (Instructor.IsSuccessful)
                 MessageBox.Show(Instructor.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -100,6 +120,16 @@ namespace Examination_System_ITI.Views
         private void Frm_Instructors_Shown(object sender, EventArgs e)
         {
             Instructor.GetAllInstructors(this);
+        }
+
+        private void comBox_Supervisor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Instructor_ComBox = comBox_Supervisor;
+        }
+
+        private void comBox_Branch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Branch_ComBox = comBox_Branch;
         }
     }
 }

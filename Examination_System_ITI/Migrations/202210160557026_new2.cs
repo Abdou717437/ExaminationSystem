@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class newmigration2 : DbMigration
+    public partial class new2 : DbMigration
     {
         public override void Up()
         {
@@ -52,19 +52,19 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Code = c.Int(nullable: false),
-                        Name = c.String(),
+                        Code = c.String(nullable: false, maxLength: 100),
+                        Name = c.String(nullable: false, maxLength: 50),
                         St_Time = c.DateTime(nullable: false),
                         En_Time = c.DateTime(nullable: false),
-                        Exam_Type = c.String(),
-                        Course_Id = c.Int(),
-                        Instructor_Id = c.Int(),
+                        Exam_Type = c.Boolean(nullable: false),
+                        InstructorId = c.Int(nullable: false),
+                        CourseId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Course", t => t.Course_Id)
-                .ForeignKey("dbo.Instructor", t => t.Instructor_Id)
-                .Index(t => t.Course_Id)
-                .Index(t => t.Instructor_Id);
+                .ForeignKey("dbo.Course", t => t.CourseId, cascadeDelete: true)
+                .ForeignKey("dbo.Instructor", t => t.InstructorId)
+                .Index(t => t.InstructorId)
+                .Index(t => t.CourseId);
             
             CreateTable(
                 "dbo.Exam_Question",
@@ -82,32 +82,19 @@
                 .Index(t => t.Question_Bank_Id);
             
             CreateTable(
-                "dbo.Question_Bank",
+                "dbo.Student_Answer",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Type = c.Int(nullable: false),
-                        Body = c.String(),
-                        Correct_Answer = c.String(),
-                        Course_Id = c.Int(),
+                        Answer = c.String(),
+                        QuestionId = c.Int(nullable: false),
+                        StudentId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Course", t => t.Course_Id)
-                .Index(t => t.Course_Id);
-            
-            CreateTable(
-                "dbo.Question_Option",
-                c => new
-                    {
-                        QuestionId = c.Int(nullable: false),
-                        Op_1 = c.String(),
-                        Op_2 = c.String(),
-                        Op_3 = c.String(),
-                        Op_4 = c.String(),
-                    })
-                .PrimaryKey(t => t.QuestionId)
-                .ForeignKey("dbo.Question_Bank", t => t.QuestionId)
-                .Index(t => t.QuestionId);
+                .ForeignKey("dbo.Exam_Question", t => t.QuestionId, cascadeDelete: true)
+                .ForeignKey("dbo.Student", t => t.StudentId)
+                .Index(t => t.QuestionId)
+                .Index(t => t.StudentId);
             
             CreateTable(
                 "dbo.Exam_Result",
@@ -137,24 +124,6 @@
                 .Index(t => t.UserId);
             
             CreateTable(
-                "dbo.Student_Answer",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Answer = c.String(),
-                        Exam_Id = c.Int(),
-                        Question_Id = c.Int(),
-                        Student_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Exams", t => t.Exam_Id)
-                .ForeignKey("dbo.Exam_Question", t => t.Question_Id)
-                .ForeignKey("dbo.Student", t => t.Student_Id)
-                .Index(t => t.Exam_Id)
-                .Index(t => t.Question_Id)
-                .Index(t => t.Student_Id);
-            
-            CreateTable(
                 "dbo.Track",
                 c => new
                     {
@@ -181,6 +150,34 @@
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Branch", t => t.Branch_Id)
                 .Index(t => t.Branch_Id);
+            
+            CreateTable(
+                "dbo.Question_Bank",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Type = c.Int(nullable: false),
+                        Body = c.String(),
+                        Correct_Answer = c.String(),
+                        CourseId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Course", t => t.CourseId, cascadeDelete: true)
+                .Index(t => t.CourseId);
+            
+            CreateTable(
+                "dbo.Question_Option",
+                c => new
+                    {
+                        QuestionId = c.Int(nullable: false),
+                        Op_1 = c.String(),
+                        Op_2 = c.String(),
+                        Op_3 = c.String(),
+                        Op_4 = c.String(),
+                    })
+                .PrimaryKey(t => t.QuestionId)
+                .ForeignKey("dbo.Question_Bank", t => t.QuestionId)
+                .Index(t => t.QuestionId);
             
             CreateTable(
                 "dbo.StudentExams",
@@ -240,9 +237,8 @@
                     {
                         Id = c.Int(nullable: false),
                         National_Id = c.String(nullable: false, maxLength: 14),
-                        F_Name = c.String(nullable: false, maxLength: 10),
-                        M_Name = c.String(nullable: false, maxLength: 10),
-                        L_Name = c.String(nullable: false, maxLength: 10),
+                        F_Name = c.String(nullable: false, maxLength: 20),
+                        L_Name = c.String(nullable: false, maxLength: 20),
                         Phone = c.String(maxLength: 14),
                         Email = c.String(),
                         BranchId = c.Int(),
@@ -286,7 +282,10 @@
             DropForeignKey("dbo.Instructor", "Id", "dbo.User");
             DropForeignKey("dbo.Branch", "InstructorId", "dbo.Instructor");
             DropForeignKey("dbo.Course", "Instructor_Id", "dbo.Instructor");
-            DropForeignKey("dbo.Exams", "Instructor_Id", "dbo.Instructor");
+            DropForeignKey("dbo.Exams", "InstructorId", "dbo.Instructor");
+            DropForeignKey("dbo.Question_Option", "QuestionId", "dbo.Question_Bank");
+            DropForeignKey("dbo.Exam_Question", "Question_Bank_Id", "dbo.Question_Bank");
+            DropForeignKey("dbo.Question_Bank", "CourseId", "dbo.Course");
             DropForeignKey("dbo.IntakeTracks", "Track_Id", "dbo.Track");
             DropForeignKey("dbo.IntakeTracks", "Intake_Id", "dbo.Intake");
             DropForeignKey("dbo.Intake", "Branch_Id", "dbo.Branch");
@@ -295,19 +294,15 @@
             DropForeignKey("dbo.TrackCourses", "Track_Id", "dbo.Track");
             DropForeignKey("dbo.TrackBranches", "Branch_Id", "dbo.Branch");
             DropForeignKey("dbo.TrackBranches", "Track_Id", "dbo.Track");
-            DropForeignKey("dbo.Student_Answer", "Student_Id", "dbo.Student");
-            DropForeignKey("dbo.Student_Answer", "Question_Id", "dbo.Exam_Question");
-            DropForeignKey("dbo.Student_Answer", "Exam_Id", "dbo.Exams");
+            DropForeignKey("dbo.Student_Answer", "StudentId", "dbo.Student");
             DropForeignKey("dbo.User_Role", "UserId", "dbo.User");
             DropForeignKey("dbo.Exam_Result", "Student_Id", "dbo.Student");
+            DropForeignKey("dbo.Exam_Result", "Exam_Id", "dbo.Exams");
             DropForeignKey("dbo.StudentExams", "Exam_Id", "dbo.Exams");
             DropForeignKey("dbo.StudentExams", "Student_Id", "dbo.Student");
-            DropForeignKey("dbo.Exam_Result", "Exam_Id", "dbo.Exams");
-            DropForeignKey("dbo.Question_Option", "QuestionId", "dbo.Question_Bank");
-            DropForeignKey("dbo.Exam_Question", "Question_Bank_Id", "dbo.Question_Bank");
-            DropForeignKey("dbo.Question_Bank", "Course_Id", "dbo.Course");
+            DropForeignKey("dbo.Student_Answer", "QuestionId", "dbo.Exam_Question");
             DropForeignKey("dbo.Exam_Question", "Exam_Id", "dbo.Exams");
-            DropForeignKey("dbo.Exams", "Course_Id", "dbo.Course");
+            DropForeignKey("dbo.Exams", "CourseId", "dbo.Course");
             DropIndex("dbo.Student", new[] { "TrackId" });
             DropIndex("dbo.Student", new[] { "Id" });
             DropIndex("dbo.Instructor", new[] { "SupervisorId" });
@@ -321,20 +316,19 @@
             DropIndex("dbo.TrackBranches", new[] { "Track_Id" });
             DropIndex("dbo.StudentExams", new[] { "Exam_Id" });
             DropIndex("dbo.StudentExams", new[] { "Student_Id" });
+            DropIndex("dbo.Question_Option", new[] { "QuestionId" });
+            DropIndex("dbo.Question_Bank", new[] { "CourseId" });
             DropIndex("dbo.Intake", new[] { "Branch_Id" });
             DropIndex("dbo.Track", new[] { "InstructorId" });
-            DropIndex("dbo.Student_Answer", new[] { "Student_Id" });
-            DropIndex("dbo.Student_Answer", new[] { "Question_Id" });
-            DropIndex("dbo.Student_Answer", new[] { "Exam_Id" });
             DropIndex("dbo.User_Role", new[] { "UserId" });
             DropIndex("dbo.Exam_Result", new[] { "Student_Id" });
             DropIndex("dbo.Exam_Result", new[] { "Exam_Id" });
-            DropIndex("dbo.Question_Option", new[] { "QuestionId" });
-            DropIndex("dbo.Question_Bank", new[] { "Course_Id" });
+            DropIndex("dbo.Student_Answer", new[] { "StudentId" });
+            DropIndex("dbo.Student_Answer", new[] { "QuestionId" });
             DropIndex("dbo.Exam_Question", new[] { "Question_Bank_Id" });
             DropIndex("dbo.Exam_Question", new[] { "Exam_Id" });
-            DropIndex("dbo.Exams", new[] { "Instructor_Id" });
-            DropIndex("dbo.Exams", new[] { "Course_Id" });
+            DropIndex("dbo.Exams", new[] { "CourseId" });
+            DropIndex("dbo.Exams", new[] { "InstructorId" });
             DropIndex("dbo.Course", new[] { "Instructor_Id" });
             DropIndex("dbo.Branch", new[] { "InstructorId" });
             DropTable("dbo.Student");
@@ -343,13 +337,13 @@
             DropTable("dbo.TrackCourses");
             DropTable("dbo.TrackBranches");
             DropTable("dbo.StudentExams");
-            DropTable("dbo.Intake");
-            DropTable("dbo.Track");
-            DropTable("dbo.Student_Answer");
-            DropTable("dbo.User_Role");
-            DropTable("dbo.Exam_Result");
             DropTable("dbo.Question_Option");
             DropTable("dbo.Question_Bank");
+            DropTable("dbo.Intake");
+            DropTable("dbo.Track");
+            DropTable("dbo.User_Role");
+            DropTable("dbo.Exam_Result");
+            DropTable("dbo.Student_Answer");
             DropTable("dbo.Exam_Question");
             DropTable("dbo.Exams");
             DropTable("dbo.Course");

@@ -28,17 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddCourse = new System.Windows.Forms.Button();
             this.grBoxStudentsInfo = new System.Windows.Forms.GroupBox();
-            this.btn_GetUserImage = new System.Windows.Forms.Button();
-            this.pBox_UserImage = new System.Windows.Forms.PictureBox();
-            this.Btn_Save = new Responsive_Design.Anmh_Controls.AnmhButton();
-            this.Btn_Refresh = new Responsive_Design.Anmh_Controls.AnmhButton();
-            this.btn_Cancel = new Responsive_Design.Anmh_Controls.AnmhButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.DateTimePick_BD = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,12 +66,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Txt_Search = new System.Windows.Forms.TextBox();
-            this.BtnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.Btn_Save = new Responsive_Design.Anmh_Controls.AnmhButton();
+            this.Btn_Refresh = new Responsive_Design.Anmh_Controls.AnmhButton();
+            this.btn_Cancel = new Responsive_Design.Anmh_Controls.AnmhButton();
+            this.btnAddCourse = new System.Windows.Forms.Button();
+            this.btn_GetUserImage = new System.Windows.Forms.Button();
+            this.pBox_UserImage = new System.Windows.Forms.PictureBox();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.trackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.panel2.SuspendLayout();
             this.grBoxStudentsInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_UserImage)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -88,6 +89,8 @@
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_UserImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvStudents
@@ -145,20 +148,6 @@
             this.panel2.Size = new System.Drawing.Size(1295, 408);
             this.panel2.TabIndex = 7;
             // 
-            // btnAddCourse
-            // 
-            this.btnAddCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCourse.FlatAppearance.BorderSize = 0;
-            this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCourse.Image = global::Examination_System_ITI.Properties.Resources.AddIcon;
-            this.btnAddCourse.Location = new System.Drawing.Point(1174, 12);
-            this.btnAddCourse.Name = "btnAddCourse";
-            this.btnAddCourse.Size = new System.Drawing.Size(60, 49);
-            this.btnAddCourse.TabIndex = 3;
-            this.btnAddCourse.UseVisualStyleBackColor = true;
-            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
-            // 
             // grBoxStudentsInfo
             // 
             this.grBoxStudentsInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -186,98 +175,6 @@
             this.grBoxStudentsInfo.Size = new System.Drawing.Size(1176, 314);
             this.grBoxStudentsInfo.TabIndex = 2;
             this.grBoxStudentsInfo.TabStop = false;
-            // 
-            // btn_GetUserImage
-            // 
-            this.btn_GetUserImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_GetUserImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_GetUserImage.FlatAppearance.BorderSize = 0;
-            this.btn_GetUserImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_GetUserImage.Image = global::Examination_System_ITI.Properties.Resources.icons8_png_96px;
-            this.btn_GetUserImage.Location = new System.Drawing.Point(832, 21);
-            this.btn_GetUserImage.Name = "btn_GetUserImage";
-            this.btn_GetUserImage.Size = new System.Drawing.Size(86, 86);
-            this.btn_GetUserImage.TabIndex = 3;
-            this.btn_GetUserImage.UseVisualStyleBackColor = true;
-            // 
-            // pBox_UserImage
-            // 
-            this.pBox_UserImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pBox_UserImage.Location = new System.Drawing.Point(780, 122);
-            this.pBox_UserImage.Name = "pBox_UserImage";
-            this.pBox_UserImage.Size = new System.Drawing.Size(211, 182);
-            this.pBox_UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_UserImage.TabIndex = 4;
-            this.pBox_UserImage.TabStop = false;
-            // 
-            // Btn_Save
-            // 
-            this.Btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_Save.BackColor = System.Drawing.Color.White;
-            this.Btn_Save.BackgroundColor = System.Drawing.Color.White;
-            this.Btn_Save.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.Btn_Save.BorderRadius = 20;
-            this.Btn_Save.BorderSize = 0;
-            this.Btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Save.FlatAppearance.BorderSize = 0;
-            this.Btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Save.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.Btn_Save.Location = new System.Drawing.Point(1033, 115);
-            this.Btn_Save.Name = "Btn_Save";
-            this.Btn_Save.Size = new System.Drawing.Size(127, 57);
-            this.Btn_Save.TabIndex = 3;
-            this.Btn_Save.Text = "Save";
-            this.Btn_Save.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.Btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.Btn_Save.UseVisualStyleBackColor = false;
-            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
-            // 
-            // Btn_Refresh
-            // 
-            this.Btn_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_Refresh.BackColor = System.Drawing.Color.White;
-            this.Btn_Refresh.BackgroundColor = System.Drawing.Color.White;
-            this.Btn_Refresh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.Btn_Refresh.BorderRadius = 20;
-            this.Btn_Refresh.BorderSize = 0;
-            this.Btn_Refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Refresh.FlatAppearance.BorderSize = 0;
-            this.Btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Refresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.Btn_Refresh.Location = new System.Drawing.Point(1033, 178);
-            this.Btn_Refresh.Name = "Btn_Refresh";
-            this.Btn_Refresh.Size = new System.Drawing.Size(127, 57);
-            this.Btn_Refresh.TabIndex = 3;
-            this.Btn_Refresh.Text = "Refresh";
-            this.Btn_Refresh.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.Btn_Refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.Btn_Refresh.UseVisualStyleBackColor = false;
-            this.Btn_Refresh.Click += new System.EventHandler(this.Btn_Refresh_Click);
-            // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Cancel.BackColor = System.Drawing.Color.White;
-            this.btn_Cancel.BackgroundColor = System.Drawing.Color.White;
-            this.btn_Cancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.btn_Cancel.BorderRadius = 20;
-            this.btn_Cancel.BorderSize = 0;
-            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Cancel.FlatAppearance.BorderSize = 0;
-            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Cancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.btn_Cancel.Location = new System.Drawing.Point(1033, 241);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(127, 57);
-            this.btn_Cancel.TabIndex = 3;
-            this.btn_Cancel.Text = "Cancel";
-            this.btn_Cancel.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_Cancel.UseVisualStyleBackColor = false;
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // panel7
             // 
@@ -388,11 +285,15 @@
             // 
             // comBox_Track
             // 
+            this.comBox_Track.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trackBindingSource, "Id", true));
+            this.comBox_Track.DataSource = this.trackBindingSource;
+            this.comBox_Track.DisplayMember = "Name";
             this.comBox_Track.FormattingEnabled = true;
             this.comBox_Track.Location = new System.Drawing.Point(142, 7);
             this.comBox_Track.Name = "comBox_Track";
             this.comBox_Track.Size = new System.Drawing.Size(198, 31);
             this.comBox_Track.TabIndex = 1;
+            this.comBox_Track.ValueMember = "Id";
             // 
             // label11
             // 
@@ -638,6 +539,123 @@
             this.Txt_Search.TabIndex = 3;
             this.Txt_Search.TextChanged += new System.EventHandler(this.Txt_Search_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(189, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(190, 27);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Search Students";
+            // 
+            // Btn_Save
+            // 
+            this.Btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Save.BackColor = System.Drawing.Color.White;
+            this.Btn_Save.BackgroundColor = System.Drawing.Color.White;
+            this.Btn_Save.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.Btn_Save.BorderRadius = 20;
+            this.Btn_Save.BorderSize = 0;
+            this.Btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Save.FlatAppearance.BorderSize = 0;
+            this.Btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Save.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.Btn_Save.Location = new System.Drawing.Point(1033, 115);
+            this.Btn_Save.Name = "Btn_Save";
+            this.Btn_Save.Size = new System.Drawing.Size(127, 57);
+            this.Btn_Save.TabIndex = 3;
+            this.Btn_Save.Text = "Save";
+            this.Btn_Save.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.Btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.Btn_Save.UseVisualStyleBackColor = false;
+            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
+            // 
+            // Btn_Refresh
+            // 
+            this.Btn_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Refresh.BackColor = System.Drawing.Color.White;
+            this.Btn_Refresh.BackgroundColor = System.Drawing.Color.White;
+            this.Btn_Refresh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.Btn_Refresh.BorderRadius = 20;
+            this.Btn_Refresh.BorderSize = 0;
+            this.Btn_Refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Refresh.FlatAppearance.BorderSize = 0;
+            this.Btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Refresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.Btn_Refresh.Location = new System.Drawing.Point(1033, 178);
+            this.Btn_Refresh.Name = "Btn_Refresh";
+            this.Btn_Refresh.Size = new System.Drawing.Size(127, 57);
+            this.Btn_Refresh.TabIndex = 3;
+            this.Btn_Refresh.Text = "Refresh";
+            this.Btn_Refresh.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.Btn_Refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.Btn_Refresh.UseVisualStyleBackColor = false;
+            this.Btn_Refresh.Click += new System.EventHandler(this.Btn_Refresh_Click);
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Cancel.BackColor = System.Drawing.Color.White;
+            this.btn_Cancel.BackgroundColor = System.Drawing.Color.White;
+            this.btn_Cancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btn_Cancel.BorderRadius = 20;
+            this.btn_Cancel.BorderSize = 0;
+            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancel.FlatAppearance.BorderSize = 0;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btn_Cancel.Location = new System.Drawing.Point(1033, 241);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(127, 57);
+            this.btn_Cancel.TabIndex = 3;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // btnAddCourse
+            // 
+            this.btnAddCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCourse.FlatAppearance.BorderSize = 0;
+            this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCourse.Image = global::Examination_System_ITI.Properties.Resources.AddIcon;
+            this.btnAddCourse.Location = new System.Drawing.Point(1174, 12);
+            this.btnAddCourse.Name = "btnAddCourse";
+            this.btnAddCourse.Size = new System.Drawing.Size(60, 49);
+            this.btnAddCourse.TabIndex = 3;
+            this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
+            // 
+            // btn_GetUserImage
+            // 
+            this.btn_GetUserImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_GetUserImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_GetUserImage.FlatAppearance.BorderSize = 0;
+            this.btn_GetUserImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_GetUserImage.Image = global::Examination_System_ITI.Properties.Resources.icons8_png_96px;
+            this.btn_GetUserImage.Location = new System.Drawing.Point(832, 21);
+            this.btn_GetUserImage.Name = "btn_GetUserImage";
+            this.btn_GetUserImage.Size = new System.Drawing.Size(86, 86);
+            this.btn_GetUserImage.TabIndex = 3;
+            this.btn_GetUserImage.UseVisualStyleBackColor = true;
+            // 
+            // pBox_UserImage
+            // 
+            this.pBox_UserImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pBox_UserImage.Location = new System.Drawing.Point(780, 122);
+            this.pBox_UserImage.Name = "pBox_UserImage";
+            this.pBox_UserImage.Size = new System.Drawing.Size(211, 182);
+            this.pBox_UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_UserImage.TabIndex = 4;
+            this.pBox_UserImage.TabStop = false;
+            // 
             // BtnSearch
             // 
             this.BtnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -651,16 +669,9 @@
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // trackBindingSource
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(189, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Search Students";
+            this.trackBindingSource.DataSource = typeof(Models.Track);
             // 
             // FrmStudents
             // 
@@ -676,7 +687,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.grBoxStudentsInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_UserImage)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -699,6 +709,8 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_UserImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -748,5 +760,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.ComboBox comBox_Track;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource trackBindingSource;
     }
 }

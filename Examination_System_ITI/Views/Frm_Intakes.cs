@@ -27,11 +27,7 @@ namespace Examination_System_ITI.Views
             grBoxIntakeInfo.Visible = false;
             dateTimePicker_SDate.Value = Convert.ToDateTime(DateTime.Now.ToLongDateString().ToString());
             dateTimePicker_EndDate.Value = Convert.ToDateTime(DateTime.Now.ToLongDateString().ToString());
-            var list = Track.GetAllTracks().ToList();
-            foreach (var item in list)
-            {
-                tracksList.Items.Add(item);
-            }
+            //Student.GetAvailableTracks(this);
             tracksList.DisplayMember = "Name";
             tracksList.ValueMember = "Id";
             listBox_AddedTracksList.Items.Clear();

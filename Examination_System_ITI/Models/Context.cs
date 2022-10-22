@@ -49,6 +49,7 @@ namespace Models
                 .WithMany(B => B.Instructors)
                 .HasForeignKey(I => I.BranchId);
 
+
             modelBuilder.Entity<Instructor>()
                 .HasOptional(I => I.Supervisor)
                 .WithMany(S => S.Instructors)
@@ -60,9 +61,8 @@ namespace Models
                 .HasForeignKey(I => I.TrackId);
 
             //Relation Between Tabel  Question_Bank & Table Question_Option One To One Relationship
-            modelBuilder.Entity<Question_Option>().HasKey(o => o.QuestionId);
-            modelBuilder.Entity<Question_Bank>().HasOptional(o => o.Question_Option)
-                .WithRequired(q => q.Question_Bank);
+            modelBuilder.Entity<Question_Option>().HasKey(O => O.QuestionId);
+            modelBuilder.Entity<Question_Bank>().HasOptional(Q => Q.Question_Option).WithRequired(O => O.Question_Bank);
 
             //Relation Between Tabel  User & Table User_Role One To One Relationship
             modelBuilder.Entity<Role>().HasKey(ur => ur.UserId);

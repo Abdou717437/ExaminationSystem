@@ -14,11 +14,15 @@ namespace Examination_System_ITI.Views
     public partial class MainFrm : Form
     {
         private Button currentBtn;
-        private Form activeForm;
+        public Form activeForm;
+        public static MainFrm mainFrm;
+        public Panel Main_Panel { get { return ContainerPanel; } set { ContainerPanel = value; } } 
+        public Button ExamBtn { get { return btnHandleExams;  } set { btnHandleExams = value; } }
 
         public MainFrm()
         {
             InitializeComponent();
+            mainFrm = this;
             ActivateButton(dashboardBtn);
             this.MaximizedBounds = Screen.FromHandle(Handle).WorkingArea;
             if (User.CurrentUser.Role.UserRole == "Student")
@@ -86,7 +90,7 @@ namespace Examination_System_ITI.Views
         #region Methods For Manipulating Forms
 
 
-        private void OpenChildForm(Form childFrm, object btnSender)
+        public void OpenChildForm(Form childFrm, object btnSender)
         {
             if (activeForm != null)
             {
@@ -111,7 +115,7 @@ namespace Examination_System_ITI.Views
             {
                 case "Admin":
                     lbl_Branches.Text = Branch.BranchesCount().ToString();
-                    Lbl_Courses.Text = Course.CoursesCount().ToString();
+                    //Lbl_Courses.Text = Course.CoursesCount().ToString();
                     Lbl_Instructors.Text = Instructor.InstructorsCount().ToString();
                     Lbl_Exams.Text = Exam.ExamsCount().ToString();
                     Lbl_Tracks.Text = Track.TracksCount().ToString();
